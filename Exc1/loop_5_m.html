@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_5_m</title>
+</head>
+<body>
+    <script>
+        let user_num = parseInt(prompt('input a number'));
+        let minus_num = user_num;
+        if(user_num == 0 || user_num == 1){
+            console.log(1)
+        }
+        else(user_num>1);{
+            while(minus_num>1){
+                minus_num--
+                user_num *= minus_num
+            }
+            console.log(user_num)
+        }
+    </script>
+</body>
+</html>

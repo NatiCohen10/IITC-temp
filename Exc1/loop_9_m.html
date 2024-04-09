@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_9_m</title>
+</head>
+<body>
+    <script>
+        let user_prompt = prompt('enter a positive number');
+        let min, max;
+        
+        if (user_prompt > 0){
+            max = user_prompt
+            min = user_prompt
+            for(let i = 1;user_prompt>0;i++){
+            user_prompt = prompt('enter a positive number')
+            if (i === 1){
+                max = user_prompt
+                min = user_prompt
+            }
+            else{
+                if(user_prompt>max){
+                    max = user_prompt
+                }
+                if(user_prompt<min && user_prompt>0){
+                    min = user_prompt
+                }
+                else if (user_prompt <= 0){
+                    break
+                }
+            }
+}
+            alert(`the biggest number is ${max}`)
+            alert(`the smallest number is ${min}`)
+        }
+        else{
+            alert('invalid input! Enter a positive number')
+        }
+    </script>
+</body>
+</html>

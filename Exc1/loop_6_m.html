@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_6_m</title>
+</head>
+<body>
+    <script>
+        let count = 1;
+        let max, min;
+        while(count<6){
+            let user_num_prompt =parseFloat(prompt('input number' +' ' + count));
+            if(count === 1){
+                max = user_num_prompt
+                min = user_num_prompt
+            }
+            else{
+                if (user_num_prompt>max){
+                    max = user_num_prompt;
+                }
+            }   if(user_num_prompt<min){
+                min = user_num_prompt;
+            }
+            count++
+        }
+        alert(`the biggest number is ${max}`)
+        alert(`the smallest number is ${min}`)
+    </script>
+</body>
+</html>

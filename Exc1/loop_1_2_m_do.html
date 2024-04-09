@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loop_2_m</title>
+    <title>loop_1_2_m</title>
 </head>
 <body>
     <script>
-        let count = 1;
+        // loop_1_m do while loop
+        let empty_row = ''
+        let count1 = 1
+        let i = 1
+        do{
+        empty_row += i
+        i++
+        count1++}
+        while (count1<101)
+        console.log(empty_row)
+        // loop_2_m do while loop
+        let count2 = 1;
         let sum = 0;
-        while(count<6){
+        do{
             let user_prompt = parseInt(prompt('enter a number'));
             sum += user_prompt;
-            count++;
+            count2++;
         }
+        while(count2<6)
         let average_num = sum/5;
         alert(`sum is ${sum}`);
         alert(`average is ${average_num}`);
-        
     </script>
 </body>
 </html>

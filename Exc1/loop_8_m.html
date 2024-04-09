@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_8_m</title>
+</head>
+<body>
+    <script>
+        // loop_m_5 do while loop
+        let user_num = parseInt(prompt('input a number'));
+        let minus_num = user_num;
+        if(user_num>=0){
+            do{
+                minus_num--
+                user_num *= minus_num
+            }
+            while(minus_num>1)
+            console.log(user_num)
+        }
+        else{
+
+           console.log('please input a non-negative integer')
+        }
+        
+        // loop_6_m do while loop
+        let count = 1;
+        let max, min;
+        do{
+            let user_num_prompt =parseFloat(prompt('input number' +' ' + count));
+            if(count === 1){
+                max = user_num_prompt
+                min = user_num_prompt
+            }
+            else{
+                if (user_num_prompt>max){
+                    max = user_num_prompt;
+                }
+            }   if(user_num_prompt<min){
+                min = user_num_prompt;
+            }
+            count++
+        }
+        while(count<6)
+        alert(`the biggest number is ${max}`)
+        alert(`the smallest number is ${min}`)
+    </script>
+</body>
+</html>

@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>loop_1_m</title>
 </head>
 <body>
     <script>
         let empty_row = ''
-        for(let i = 1; i<101; i++)  {
-            empty_row += i
-            
-        }
+        let count = 1
+        let i = 1
+        while (count<101){
+        empty_row += i
+        i++
+        count++}
         console.log(empty_row)
     </script>
 </body>

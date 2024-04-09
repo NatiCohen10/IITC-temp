@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_11_m</title>
+</head>
+<body>
+    <script>
+        const random_num = Math.floor(Math.random() * 100)
+        let user_num = parseInt(prompt('The system has chosen a random number! Input a number between 0 and 99 and try to guess the number the system chose'))
+        const start = new Date().getTime(); 
+        let count = 0
+        while(user_num !==  random_num){
+            if (user_num < random_num){
+                alert('Your number is too low!')
+                user_num = parseInt(prompt('Pick a new numbr'))
+                count++
+            }
+            else if (user_num > random_num){
+                alert('Your number is too high!')
+                user_num = parseInt(prompt('Pick a new numbr'))
+                count++
+            }
+        }
+        alert('You got it!')
+        alert(`It took you ${count} tries to get the number right`)
+        const end = new Date().getTime();
+        let executionTime = (end - start) / 1000;
+        alert(`it took you ${executionTime} seconds to find the number!`)
+                
+    </script>
+</body>
+</html>
