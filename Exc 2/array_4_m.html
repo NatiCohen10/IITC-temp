@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_4_m</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,4,2,3,1,4,5,4,3,7]
+        function arr_no_repeat(arr){
+            let empt_arr = []
+            let sum = 0
+            for(let i of arr){
+                let found = false
+                for(let j of empt_arr){
+                    if(i===j){
+                        found = true
+                        break
+                    }
+                }
+                if(!found){
+                        empt_arr.push(i)
+                        sum++
+                    }
+                    
+            }
+            return sum
+        }
+        console.log(arr_no_repeat(arr));
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function_8_b</title>
+  </head>
+  <body>
+    <script>
+      const user_prompt = parseInt(prompt("input a whole number"));
+      let num = user_prompt;
+      let count_division = 1;
+      let count_print = 1;
+      let sum = 0;
+      function number_into_sum(num) {
+        while (num > 1) {
+          num = num / 10;
+          let divided_num = num;
+          count_division++;
+          while (num < 1 && count_print < count_division) {
+            divided_num *= 10;
+            divided_num = Math.floor(divided_num);
+            divided_num %= 10;
+            sum += divided_num;
+            divided_num = num * 10 ** count_print;
+            count_print++;
+          }
+        }
+        return sum
+      }
+      console.log(number_into_sum(user_prompt))
+    </script>
+  </body>
+</html>

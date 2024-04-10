@@ -19,14 +19,14 @@
         // setting divided_num to then multiply it in the inner loop and get the numbers we want
             let divided_num = num
             count_division++
-            // inner while loop to get each digit 1 at a time, starting with the farthest one (123-> we will get 1 first then 2 then 3,), works by taking the divided number(which is worth the same as the num we divided at the outer loop), multiplying it by 10, removing the remainder and taking its modulus, then giving it the value of the number we divided multiplied by 10 to the power of the counter. exm: the divided num is 0.123->1.23->1->1->console log 1->divided num = 0.123 * 10^counter(1 by default), +1 to the counter
-        while(num  < 1 && count_print<count_division){
-            divided_num *= 10
-            divided_num = Math.floor(divided_num)
-            divided_num %= 10
-            console.log(divided_num)
-            divided_num = num * (10**count_print)
-            count_print++
+            // inner while loop to get each digit 1 at a time, starting with the farthest one (123-> we will get 1 first then 2 then 3,), works by taking the divided number(which is worth the same as the num we divided at the outer loop), multiplying it by 10, removing the remainder and taking its modulus, then giving it the value of the number we divided multiplied by 10 to the power of the counter. ex: the divided num is 0.123->1.23->1->1->console log 1->divided num = 0.123 * 10^counter(1 by default), +1 to the counter
+            while(num  < 1 && count_print<count_division){
+                divided_num *= 10
+                divided_num = Math.floor(divided_num)
+                divided_num %= 10
+                console.log(divided_num)
+                divided_num = num * (10**count_print)
+                count_print++
         }
 
 }

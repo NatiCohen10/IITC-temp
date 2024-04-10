@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops_nested_3</title>
+</head>
+<body>
+    <script>
+        function multi_table(range){
+            let square = ''
+            for(let i = 1;i<=range;i++){
+                let row = ''
+                for(let j  = 1; j<=range; j++){
+                row += j*i + '\t';
+            }
+            square += row + '\n';
+            }
+            return square
+        }
+        let multiplication_table = 10
+        console.log(multi_table(multiplication_table));
+
+
+    </script>
+</body>
+</html>

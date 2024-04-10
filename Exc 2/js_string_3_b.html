@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_string_3_b</title>
+</head>
+<body>
+    <script>
+        let arr_str = 'nati:gev,asaf:gay,yarden:ugly,noam:good'
+        function keyValue(arr){
+            let max_length = 0
+            let split_arr1 = arr.split(',')
+            for(let pair of split_arr1){
+                let [key, value] = pair.split(':')
+                if (value.length>max_length){
+                max_length = value.length
+            } 
+            }
+           
+            return max_length
+        }
+        console.log(keyValue(arr_str))
+    </script>
+</body>
+</html>

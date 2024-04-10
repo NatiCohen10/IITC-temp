@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_2.7_m</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1,2,3]
+        let arr2 = [3,2,5]
+        let sum = 0
+        function similar_val_array(arr1, arr2){
+            for(let i of arr1){
+                for(let j of arr2){
+                    if (j==i){
+                        sum++
+                    } 
+                }
+            }
+            return sum
+        }
+        console.log(similar_val_array(arr1, arr2));
+    </script>
+</body>
+</html>
