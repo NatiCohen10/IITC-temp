@@ -7,16 +7,16 @@
 </head>
 <body>
     <script>
-        function swap_nums(num1, num2){
-            let swapped_num1 = num1
-            num1 = num2
-            num2 = swapped_num1
-            return [num1, num2]
-            
-        }
         let num_1 = 5
         let num_2 = 8
-        console.log(swap_nums(num_1,num_2));
+        function swap_nums(){
+            let swapped_num1 = num_1
+            num_1 = num_2
+            num_2 = swapped_num1
+            
+        }
+        swap_nums()
+        console.log(num_1,num_2);
     </script>
 </body>
 </html>

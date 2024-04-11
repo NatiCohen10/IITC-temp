@@ -7,27 +7,27 @@
 </head>
 <body>
     <script>
-        let arr = [1,2,3,4,5,4,2,3,1,4,5,4,3,7]
+        const arr = [1,2,3,4,5,4,2,1]
         function arr_no_repeat(arr){
-            let empt_arr = []
-            let sum = 0
-            for(let i of arr){
-                let found = false
-                for(let j of empt_arr){
-                    if(i===j){
-                        found = true
-                        break
+            let unique_counter = 0
+            for(let i = 0;i<arr.length;i++){
+                let num = arr[i]
+                let count = 0
+                for(let j = 0; j<arr.length;j++){
+                    if(arr[j] == num){
+                        count++
                     }
                 }
-                if(!found){
-                        empt_arr.push(i)
-                        sum++
-                    }
-                    
+                if (count == 1){
+                    unique_counter++
+
+                }
             }
-            return sum
+            return unique_counter
         }
-        console.log(arr_no_repeat(arr));
+        let unique_arr = arr_no_repeat(arr)
+        console.log(unique_arr);
+        
     </script>
 </body>
 </html>
