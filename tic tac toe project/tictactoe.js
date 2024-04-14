@@ -15,10 +15,13 @@ let count_game_wins = {};
 let wins_player_1;
 let wins_player_2;
 
+// keeps track of the player wins
 function game_win_counter(player_name, player_counter){
+    // if the dictionary count_game_wins doesnt contain the player name it adds it(used to initialize the dict at the beginning of every round)
         if(!count_game_wins.hasOwnProperty(player_name)){
             count_game_wins[player_name] = 0
         }
+        // if the dict has the player name, the player name is equal to the player counter, a var that counts wins for each player
         else if(count_game_wins.hasOwnProperty){
             count_game_wins[player_name] = player_counter
         }
@@ -105,7 +108,7 @@ function play_sign(sign) {
             if (y >= 0 && y < BOARD_LEN && x >= 0 && x < BOARD_LEN) {
                 // checks if the space input is free
                 if (game_board[y][x] !== 'X' && game_board[y][x] !== 'O') {
-                    game_board[y][x] = sign;
+                    game_board[y][x] = `  ${sign}  `;
                     break; // exit the loop once a valid move is made
                 } else {
                     // if the spot is taken the alert pops up and the user inputs again
@@ -214,6 +217,7 @@ function is_win(sign) {
         return false;
     }
 }
+
 // asks the player if they want to replay the game
 function replay_game_prompt(){
     replay = prompt('would you like to play again?(y/n)').toLowerCase();
@@ -225,11 +229,13 @@ function replay_game_prompt(){
         return false
         }
 }
+
 // resets the game board and then runs the main function again fromthe start
 function replay_game_action(){
     game_board = []
     run_game()
 }
+
 // starts counting time
 function start_time_count(){
     start = new Date().getTime(); 
@@ -238,11 +244,13 @@ function start_time_count(){
 function end_time_count(){
     end = new Date().getTime();
 }
+
 // calculates the time taken by doing end - start and then dividing by 1000 to get the seconds
 function calculate_time_taken(){
-    const time_taken = (end - start) / 1000;
+    const time_taken = (end - start) / 100;
     alert(`It took you ${time_taken} seconds to complete this game!`)
 }
+
 // main function that runs the game
 function run_game(){
     // initialize player wins

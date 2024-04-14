@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        const book_list = [
+        { bookName: "LOTR 1", bookLength: 500 },
+        { bookName: "LOTR 2", bookLength: 650 },
+        { bookName: "LOTR 3", bookLength: 600 },
+        { bookName: "The_Hobbit", bookLength: 350 },
+        { bookName: "The_Hobbit 2", bookLength: 400 },
+      ];
+        function deleteBook(bookArray, deleteBookName){
+            for(let i in bookArray){
+                if (bookArray[i].bookName === deleteBookName){
+                    bookArray.splice(i, 1)
+                    return true
+                }
+            }
+            return false
+        }
+        console.log(deleteBook(book_list,'The_Hobbit'));
+        console.log(book_list);
+        console.log(deleteBook(book_list,'book1'));
+        
+    </script>
+  </body>
+</html>

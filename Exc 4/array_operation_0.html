@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       const book_list = [
+    { bookName: 'LOTR 1', bookLength: 500 },
+    { bookName: 'LOTR 2', bookLength: 650 },
+    { bookName: 'LOTR 3', bookLength: 600 },
+    { bookName: 'The_Hobbit', bookLength: 350 },
+    { bookName: 'The_Hobbit 2', bookLength: 400 }
+];
+
+        for(let i=0;i<book_list.length;i++){
+            let book = `Name: ${book_list[i].bookName}, Number of pages: ${book_list[i].bookLength}`;
+            console.log(book)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const book_list = [
+        { bookName: "LOTR 1", bookLength: 500 },
+        { bookName: "LOTR 2", bookLength: 650 },
+        { bookName: "LOTR 3", bookLength: 600 },
+        { bookName: "The_Hobbit", bookLength: 350 },
+        { bookName: "The_Hobbit 2", bookLength: 400 },
+      ];
+      function updateBookPages(bookArray, bookName, newBookLength) {
+        for(let i in bookArray){
+                if (bookArray[i].bookName === bookName){
+                    bookArray[i].bookLength = newBookLength
+                    return bookArray[i]
+                } 
+            }
+            return null
+        }
+      console.log(updateBookPages(book_list,'LOTR 1',700))
+      console.log(updateBookPages(book_list,'book 1',200))
+      console.log(updateBookPages(book_list,'LOTR 1',650))
+    </script>
+  </body>
+</html>

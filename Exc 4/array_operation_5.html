@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbersArray = [1, 2, 3, 4];
+      function findNumAndPlus1(arrayName, number) {
+        let found = false
+        for (let i = 0; i<arrayName.length;i++) {
+          if (arrayName[i] === number) {
+            arrayName[i]++;
+            found = true
+          }
+        }
+        if (found === true){
+            console.log(arrayName)
+        }
+        else{
+        console.log("Number not found");}
+      }
+      findNumAndPlus1(numbersArray,2)
+      findNumAndPlus1(numbersArray, 3)
+      findNumAndPlus1(numbersArray, 4)
+    </script>
+  </body>
+</html>
