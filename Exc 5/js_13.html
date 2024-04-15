@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flexWrapper">
+        <div class="wrapper">
+            <div class="header">
+                <button onclick="clearCalc()" class="clearButton">CE</button>
+                <input type="text" class="output" disabled>
+            </div>
+            <div class="gridItems">
+                <div class="mainNumbers">
+                    <button onclick="addToScreen(7)">7</button>
+                    <button onclick="addToScreen(8)">8</button>
+                    <button onclick="addToScreen(9)">9</button>
+                    <button onclick="addToScreen(4)">4</button>
+                    <button onclick="addToScreen(5)">5</button>
+                    <button onclick="addToScreen(6)">6</button>
+                    <button onclick="addToScreen(1)">1</button>
+                    <button onclick="addToScreen(2)">2</button>
+                    <button onclick="addToScreen(3)">3</button>
+                    <button onclick="addToScreen(0)">0</button>
+                    <button onclick="floatingPoint('.')">.</button>
+                    <button onclick="calculate()">=</button>
+                </div>
+                <div class="mathOperations">
+                    <button onclick="setOperator('/')">÷</button>
+                    <button onclick="setOperator('*')">
+                        ×
+                    </button>
+                    <button onclick="setOperator('-')">-</button>
+                    <button onclick="setOperator('+')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

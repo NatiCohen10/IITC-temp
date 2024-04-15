@@ -1,0 +1,114 @@
+@import url(reset.css);
+
+html,body{
+    height: 100vh;
+}
+
+.flexWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.wrapper{
+    height: 275px;
+    background-color: #A8A8A8;
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 220px;
+}
+.header{
+    background-color: #EEEEEE;
+    margin: 0.5em;
+    padding: 0.25em;
+    border-radius: 8px;
+    width: 200px;
+    display: flex;
+}
+.clearButton{
+    background-color: #FEB191;
+    border: 2px solid #EC4802;
+    border-top-left-radius: 6px ;
+    border-bottom-left-radius: 6px;
+    font-size: 0.8rem;
+    height: 30px;
+    width: 27px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+.clearButton:hover{
+    background-color: rgb(255, 82, 82);
+    cursor: pointer;
+}
+.output{
+    border:2px solid #A8A8A8;
+    background-color: #DDFCFF;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    width: 150px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+.mainNumbers{
+    background-color: #EEEEEE;
+    width: 150px;
+    padding: 0.25em;
+    margin: 0.25em;
+    border-radius: 6px;
+    height: 173px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    
+}
+.mainNumbers button{
+    border-radius: 50%;
+    border: 1.5px solid gray;
+    height: 35px;
+    width: 35px;
+    margin-left: 5px;
+    margin-bottom: 7px;
+    background-color: #CBD6FE;
+    font-weight: bolder;
+    
+}
+.mainNumbers button:hover{
+    cursor:pointer ;
+    background-color: rgb(254, 224, 138);
+}
+.mainNumbers button:last-child{
+    background-color: #02CA00;
+}
+.mainNumbers button:last-child:hover{
+    cursor:pointer ;
+    background-color: rgb(254, 224, 138);
+}
+.gridItems{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+.mathOperations{
+    background-color:#EEEEEE ;
+    padding: 7px;
+    border-radius: 6px;
+    height: 172px;
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    /* width: 150px; */
+    /* margin: 4px; */
+    
+}
+.mathOperations button{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 1.5px solid;
+    background-color: #02CA00;
+    margin-bottom: 6px;
+}
+
+.mathOperations button:active{
+    background-color: rgb(254, 224, 138);;
+}
