@@ -8,15 +8,16 @@
 </head>
 <body>
     <div>
-        <p>? ? ? ?</p>
-        <p>Bulls</p>
-        <p>Cows</p>
+        <table id="guessTable"></table>
     </div>
     <div>
-        <button onclick="numIncrement(0)"></button>
-        <button onclick="numIncrement(1)"></button>
-        <button onclick="numIncrement(2)"></button>
-        <button onclick="numIncrement(3)"></button>
+        <button id="button1" onclick="getNumbersFromUser(0)"></button>
+        <button id="button2" onclick="getNumbersFromUser(1)"></button>
+        <button id="button3" onclick="getNumbersFromUser(2)"></button>
+        <button id="button4" onclick="getNumbersFromUser(3)"></button>
+        <button id="submitButton" onclick="submitResults()">Go</button>
+        <p id="duplicateCheck"></p>
+        <p id="winAnnounce"></p>
     </div>
     <script src="script.js"></script>
 </body>

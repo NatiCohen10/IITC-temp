@@ -31,11 +31,10 @@ html,body{
     border-top-left-radius: 6px ;
     border-bottom-left-radius: 6px;
     font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
     height: 30px;
     width: 27px;
-    display: inline-block;
-    vertical-align: top;
-    margin: 0;
+    padding-left: 4px;
 }
 .clearButton:hover{
     background-color: rgb(255, 82, 82);
@@ -96,7 +95,7 @@ html,body{
     align-self: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    
+    margin-right: 5px;
 }
 .mathOperations button{
     height: 35px;
