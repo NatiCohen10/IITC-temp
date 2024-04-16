@@ -3,8 +3,6 @@ let num1;
 let num2 = 0;
 let usedOperator;
 
-console.log(resultPrint);
-
 function addToScreen(value){
     resultPrint.value += value;
 }
@@ -36,36 +34,43 @@ function calculate(){
 
     if(usedOperator === '+'){
         const sum = number1 + number2;
-        resultPrint.value = sum
-        newNumber = sum
-        
+        resultPrint.value = sum;
+        newNumber = sum;
+        usedOperator = ''
+
     }
     else if(usedOperator === '-'){
         const result = number1 - number2;
-        resultPrint.value = result
-        newNumber = result
+        resultPrint.value = result;
+        newNumber = result;
+        usedOperator = ''
+
     }
     else if(usedOperator === '/'){
         if (number2 !== 0) {
             const result = number1 / number2;
             resultPrint.value = result;
             newNumber = result;
+            usedOperator = ''
+
         } else {
             resultPrint.value = 'Error';
         }
     }
     else if(usedOperator === '*'){
         const result = number1 * number2;
-        resultPrint.value = result
-        newNumber = result
+        resultPrint.value = result;
+        newNumber = result;
+        usedOperator = ''
+
     }
-    num1 = newNumber
+    num1 = newNumber;
 }
 
 function clearCalc(){
-    resultPrint.value = ''
-    num1 = ''
-    num2 = 0
-    usedOperator = ''
+    resultPrint.value = '';
+    num1 = '';
+    num2 = 0;
+    usedOperator = '';
 
 }

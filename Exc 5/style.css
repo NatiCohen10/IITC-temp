@@ -96,8 +96,6 @@ html,body{
     align-self: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    /* width: 150px; */
-    /* margin: 4px; */
     
 }
 .mathOperations button{
@@ -112,3 +110,5 @@ html,body{
 .mathOperations button:active{
     background-color: rgb(254, 224, 138);;
 }
+
+
