@@ -7,17 +7,38 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <table id="guessTable"></table>
+    <div id="startGameContainer">
+        <h1>Welcome to Bulls & Cows!</h1>
+        <h3>Rules</h3>
+        <p>In this game the computer has chosed 4 random numbers.</p>
+        <p>Your goal is to discover what the numbers are!</p>
+        <p><span class="bullsDesign">Bulls</span>: Correct number at the correct position</p>
+        <p><span class="cowsDesign">Cows</span>: Correct number but at a wrong position</p>
+        <label for="playerName">Input your name:</label>
+        <input type="text" id="playerName" placeholder="Insert name"></input>
+        <button id="startGameButton" onclick="startGame()">Submit</button>
     </div>
-    <div>
-        <button id="button1" onclick="getNumbersFromUser(0)"></button>
-        <button id="button2" onclick="getNumbersFromUser(1)"></button>
-        <button id="button3" onclick="getNumbersFromUser(2)"></button>
-        <button id="button4" onclick="getNumbersFromUser(3)"></button>
-        <button id="submitButton" onclick="submitResults()">Go</button>
-        <p id="duplicateCheck"></p>
+    <div class="mainContainer">
+        <div id="guessingTableStyle">
+            <h2>Bulls & Cows</h2>
+            <table id="guessTable"></table>
+        </div>
+        <div id="gameContainer">
+            <button id="button1" onclick="getNumbersFromUser(0)"></button>
+            <button id="button2" onclick="getNumbersFromUser(1)"></button>
+            <button id="button3" onclick="getNumbersFromUser(2)"></button>
+            <button id="button4" onclick="getNumbersFromUser(3)"></button>
+            <button id="submitButton" onclick="submitResults()">Go</button>
+            <p id="duplicateCheck"></p>
+            
+        </div>
         <p id="winAnnounce"></p>
+        <div id="utilityButtons">
+            <button onclick="startNewGame()">New Game</button>
+            <button onclick="showHistory()">Show History</button>
+           
+        </div>
+        <table id="historyTable"></table>
     </div>
     <script src="script.js"></script>
 </body>

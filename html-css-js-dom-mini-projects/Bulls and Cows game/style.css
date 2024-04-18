@@ -1,17 +1,90 @@
 @import url(reset.css);
 
-
-table {
-    border: 1px solid grey;
-    width: 50%;
-    /* מאחד גבולות כך שנראה טוב יותר */
-    border-collapse: collapse;
-    margin-bottom: 10px;
+html, body{
+    background-color: rgb(7, 65, 115);
+    line-height: 1.5;
+    color: rgb(254, 253, 237);
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-
+table {
+    border-radius: 4px;
+    background-color: rgb(20, 30, 70);
+    border-collapse: collapse;
+}
+.bullsDesign{
+    color: rgb(93, 235, 215);
+}
+.cowsDesign{
+    color: rgb(197, 255, 149);
+}
+#startGameButton{
+    background-color: rgb(22, 121, 171);
+    color: rgb(254, 253, 237);
+    border-radius: 4px;
+    margin-top: 8px;
+}
+#startGameButton:hover{
+    background-color: rgb(0, 79, 188);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
 th , td {
     padding: 10px;
-    text-align: left;
-    border: 1px solid grey;
+    text-align: center;
+    border-radius: 4px;
 }
+
+#gameContainer {
+    display: none;
+    align-items: center;
+  }
+#startGameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+#utilityButtons{
+    display: none;
+    align-items: center;
+    gap: 5px;
+    
+}
+#guessingTableStyle{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#gameContainer button {
+    background-color: rgb(70, 128, 208); /* Blueish color */
+    color: rgb(254, 253, 237);
+    border-radius: 4px;
+    margin: 4px;
+
+}
+#gameContainer button:hover{
+    background-color: rgb(21, 80, 162);
+    color: #ffffff;
+    cursor: pointer;
+}
+#utilityButtons button{
+    background-color: rgb(230, 88, 29); /* Orange color */
+    color: rgb(254, 253, 237);
+    border-radius: 4px;
+    margin-top: 8px;
+}
+#utilityButtons button:hover{
+background-color: rgb(182, 66, 3); /* Lighter shade of orange */
+    color: rgb(255, 255, 255);
+    cursor: pointer;}
