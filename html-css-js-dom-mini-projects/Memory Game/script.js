@@ -236,6 +236,7 @@ function showHistory() {
     const tableOfHistory = document.querySelector('#historyTable');
     tableOfHistory.innerHTML = '<tr><th>Player name</th><th>Number of moves</th><th>Number of mistakes</th><th>Time taken</th></tr>';
     for (const gameHistory of gamesHistory) {
+        // creates a table row with stats from the gameHistory list
         const historyEntry = `<tr><td>${gameHistory.name}</td><td>${gameHistory.numberOfMoves}</td><td>${gameHistory.numberOfMistakes}</td><td>${gameHistory.time} seconds</td></tr>`;
         tableOfHistory.innerHTML += historyEntry;
     }
@@ -252,10 +253,10 @@ function newGame(){
     updateMovesAndMistakes();
     document.querySelector(".board").innerHTML = "";
     document.querySelector(".board").style.gridTemplateColumns = "";
-    document.querySelector('.getDetails').style.display = 'flex'
-    document.querySelector('.initPage').style.display = 'none'
-    document.querySelector('.board').style.display = 'none'
-    document.querySelector('.utilityButtons').style.display = 'none'
+    document.querySelector('.getDetails').style.display = 'flex';
+    document.querySelector('.initPage').style.display = 'none';
+    document.querySelector('.board').style.display = 'none';
+    document.querySelector('.utilityButtons').style.display = 'none';
     document.querySelector('.top').style.display = 'none'
     let winAnnounce = document.querySelector('#winMessage');
     winAnnounce.innerText = '';
