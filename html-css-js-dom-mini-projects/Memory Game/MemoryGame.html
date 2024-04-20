@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Animals memory game</h1>
+    <div class="getDetails">
+        <label for="userName">Input your name:</label>
+        <input type="text" id="userName" placeholder="Your Name">
+        <button onclick="goToInitPage()">Submit</button>
+    </div>
+    <div class="initPage">
+        <h2>Welcome to my card memory game!</h2>
+        <p>In this game you need to match the card pairs by the images displayed on them</p>
+        <p>Please choose what size board you want!</p>
+        <button class="boardSizeButton" onclick="createBoard(2)">2x2</button>
+        <button class="boardSizeButton" onclick="createBoard(4)">4x4</button>
+        <button class="boardSizeButton" onclick="createBoard(6)">6x6</button>
+    </div>
+    <div class="top">
+        <label id="gameMistakes">Mistakes: 0</label>
+        <label id="gameMoves">Moves: 0</label>
+        <p id="winMessage"></p>
+        <label id="timer">Timer: 00:00</label>
+        
+    </div>
+    <div class="board">
+        
+        
+    </div>
+    <div class="utilityButtons">
+        <button onclick="showHistory()">Show Game History</button>
+        <button id="newGameButton" onclick="newGame()">Restart game</button>
+    </div>
+    <table id="historyTable"></table>
+    <script src="script.js"></script>
+</body>
+</html>
