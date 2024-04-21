@@ -1,0 +1,334 @@
+@import url(reset.css);
+
+html{
+    line-height: 1.15;
+}
+body{
+    font-family: "Work Sans", sans-serif;
+    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+}
+a{
+    background-color: transparent;
+}
+nav{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #200e3d;
+    z-index: 999;
+    
+}
+nav ul li a{
+    color: white;
+    font-size: 16px;
+    transition: 0.2s;
+    
+}
+a:hover{
+    cursor: pointer;
+    color: rgb(82, 197, 255);
+}
+ul{
+    list-style: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+a{
+    text-decoration: none;
+}
+li{
+    padding: 0 20px;
+    max-width: 145px;
+}
+.flex-list{
+    display: flex;
+    justify-content: center;
+    padding: 0 10%;
+}
+.hero-img{
+    max-width: 300px;
+    margin-inline: auto;
+    border-radius: 50%;
+
+}
+
+.img-header-container{ 
+    padding-top: 85px;
+
+}
+
+h1{
+    text-align: center;
+    font-size: 22px;
+    padding-top: 10px;
+    margin-bottom: 50px;
+    margin-inline: 20px;
+}
+.about-me{
+    margin-inline: auto;
+    max-width: 500px;
+    background-color: white;
+    padding: 30px 50px 50px;
+    box-shadow: 10px 10px 0px rgb(0 0 0 / 40%), -10px -10px 0px rgb(255 114 114 / 80%)
+}
+
+.about-me h2{
+    text-align: center;
+    font-family: 'Days One', sans-serif;
+    font-size: 1.5em;
+    padding-bottom: 0.60em;
+}
+.about-me-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.about-me-section img{
+    max-width: 500px;
+    max-height: 300px;
+}
+
+.about-me-section p{
+    text-align: center;
+    font-size: 1.1rem;
+}
+.projects-wrapper{
+    text-align: center;
+    margin-block: 30px;
+}
+.projects-wrapper h2{
+    margin-bottom: 20px;
+}
+.projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.projects img{
+    max-width: 350px;
+    max-height: 350px;
+    border-radius: 10px;
+}
+.text{
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    padding: 17px;
+    overflow: hidden;
+    transition: 0.2s;
+    z-index: 2;
+}
+.text p{
+    margin-block: 1rem;
+}
+.text:hover{
+    height: 180px;
+    transition: 0.3s;
+}
+.earth-project{
+    width: 350px;
+    height: 350px;
+    position: relative;
+    background-image: url(images/earth.jpeg);
+    background-size: cover;
+    border-radius: 10px;
+}
+.bbc-project{
+    width: 350px;
+    height: 350px;
+    position: relative;
+    background-image: url("images/bbcnews.png");
+    background-size: cover;
+    border-radius: 10px;
+}
+.button{
+    border: 5px solid lightblue;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    margin-left: 10px;
+    
+}
+.text-content{
+    /* margin-left: 16px; */
+    color: white;
+    margin-inline: auto;
+    padding-bottom: 24px;
+    padding-top: 24px;
+    padding-left: 75px;
+}
+.text-content h2{
+    margin-left: 150px;
+    padding-bottom: 12px;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+}
+.contact-details{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 16px;
+}
+.contact-details label{
+    color: white;
+}
+.contact-details input{
+    max-width: 400px;
+    height: 50px;
+    border-radius: 6px;
+}
+.form-message{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-left: 16px;
+    gap: 6px;
+}
+.form-message textarea{
+     max-width: 500px; 
+    max-height: 200px; 
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.form-message button{
+    padding: 16px;
+    max-width: 150px;
+    margin-block:12px ;
+    border-radius: 6px;
+    border: none;
+    background-color: lightblue;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #1d3d5f;
+}
+.form-message button:active{
+    background-color: black;
+    color: white;
+}
+.contact-form-wrapper{
+    background-color: rgba(3, 3, 3, 45%);
+
+}
+
+.social-media a i{
+    color: white;
+    transition: 0.2s;
+    font-size: 30px;
+    margin-left: 20px;
+}
+.social-media a i:active{
+    color: lightblue;
+}
+.fa{
+    display: inline-block;
+    font: normal normal normal 14px / 1 FontAwesome;
+    width: 200px;
+    text-rendering: auto;
+
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    background-color: #1f2027;
+    color: white;
+    padding: 24px;
+}
+@media(min-width: 500px){
+    .hero-img{
+        max-width: 440px;
+    }
+    h1{
+        font-size: 24px;
+        font-weight: bolder;
+    }
+    .about-me{
+        max-width: 1100px;
+        width: 90%;
+    }
+    .about-me-section{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-flow: wrap;
+        gap:24px;
+    }
+   .about-me img{
+    min-height: 450px;
+    min-width: 400px;
+   }
+   .about-me-text{
+    max-width: 396px;
+   }
+   .about-me-text p{
+    display: block;
+   }
+   .projects{
+    flex-direction: row;
+    flex-flow: wrap;
+   }
+   .projects .button:hover{
+    cursor: pointer;
+   }
+   .contact-form-wrapper{
+    padding: 75px 0 50px 0;
+   }
+   .contact-form{
+    flex-direction: row;
+    justify-content: end;
+    max-width: 1100px;
+    width: 90%;
+    margin-inline: auto;
+   
+   }
+   .text-content{
+    padding:0;
+    margin-bottom: 40px;
+   }
+   .text-content h2{
+    margin-left: 0px;
+    margin-block: 0.83em;
+    padding-bottom: 0px;
+    text-align: center;
+   }
+   .text-content p{
+    text-align: center;
+   }
+
+   .contact-details{
+    flex: 1;
+   }
+   .form-message{
+    max-width: 60%;
+    min-width: 50%;
+   }
+
+   .form-message button{
+    width: 140px;
+    height: 40px;
+    margin-top: 40px;
+    margin-left: auto;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+   }
+   .form-message button:hover{
+    background-color: black;
+    color: white;
+   }
+   .fa-facebook:hover{
+    color: lightblue;
+   }
+   .fa-twitter:hover{
+    color: lightblue;
+   }
+}
