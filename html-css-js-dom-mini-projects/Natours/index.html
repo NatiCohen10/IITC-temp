@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img\favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Natours | Exciting tours for adventerous people</title>
+</head>
+<body>
+    <input type="checkbox" class="navigationCheckbox" id="toggleNavbar">
+    <!-- when pressing the label for a checkbox the checkbox is considered pressed too -->
+    <label for="toggleNavbar" class="navigationButton hamburger-icon"><span class="navigationText">&#9776;</span></label>
+    <div class="navigationBackground"></div>
+    <nav class="navbar">
+        <ul class="navigationList">
+            <li><a href="#"><span>01</span>About Natours</a></li>
+            <li><a href="#"><span>02</span> Your Benefits</a></li>
+            <li><a href="#"><span>03</span> Popular tours</a></li>
+            <li><a href="#"><span>04</span> Stories</a></li>
+            <li><a href="#"><span>05</span> Book now</a></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <div class="headerLogoBox">
+            <img src="img\logo-white.png" alt="logo" class="headerLogo">
+        </div>
+        <div class="headerTextBox">
+            <h1><span class="headingPrimaryText">Outdoors</span>
+            <span class="headingSecondaryText">is where life happens</span></h1>
+            <a href="#" class="button buttonWhite buttonAnimated" >Discover our tours</a>
+        </div>
+    </header>
+    <section class="sectionAbout">
+        <h2 class="secondaryHeading">Exciting tours for adventerous people</h2>
+        <div class="flexWrapper">
+            <div class="aboutText">
+                <h3 class="aboutHeader3">You're going to fall in love with nature</h3>
+                <p class="aboutPar">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur veniam aspernatur ipsam laboriosam reiciendis expedita, numquam debitis nihil nam ex tenetur dolores. Accusantium, est!</p>
+                <h3 class="aboutHeader3">Live adventures like you never have before</h3>
+                <p class="aboutPar">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis minima suscipit nesciunt in!</p>
+                <a href="#" class="buttonText">Learn more →</a>
+            </div>
+            <div class="aboutImages">
+                <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 1" class="compositionPhoto compositionPhoto-p1" src="img/nat-1-large.jpg">
+                <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 2" class="compositionPhoto compositionPhoto-p2" src="img/nat-2-large.jpg">
+                <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 3" class="compositionPhoto compositionPhoto-p3" src="img/nat-3-large.jpg">
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <div class="cards">
+            <div class="featureCard">
+                <i class="featureCardIcon icon-world"></i>
+                <h3>Explore the world</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et, hic maiores placeat deleniti.</p>
+            </div>
+            <div class="featureCard">
+                <i class="featureCardIcon icon-compass"></i>
+                <h3>meet nature</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et, hic maiores placeat deleniti.</p>
+            </div>
+            <div class="featureCard">
+                <i class="featureCardIcon icon-map"></i>
+                <h3>find your way</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et, hic maiores placeat deleniti.</p>
+            </div>
+            <div class="featureCard">
+                <i class="featureCardIcon icon-heart"></i>
+                <h3>live a healthier life</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et, hic maiores placeat deleniti.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="popularTours">
+        <h2 class="secondaryHeading">most popular tours</h2>
+        <div class="tourCardContainer">
+            <div class="tourCard">
+                <div class="cardSide cardFront">
+                    <div class="cardPicture cardPicture-1">
+                       
+                    </div>
+                    <h4 class="cardHeading">
+                        <span class="cardSpan cardSpan-1">The sea explorer</span>
+                    </h4>
+                    <div class="cardDetails">
+                        <ul>
+                            <li>3 day tours</li>
+                            <li>Up to 30 people</li>
+                            <li>2 tour guides</li>
+                            <li>Sleep in cozy hotels</li>
+                            <li>Difficulty:easy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cardSide cardBack cardBack-1">
+                    <div class="backCenter">
+                        <div class="cardPrice">
+                            <p class="priceOnly">only</p>
+                            <p class="priceValue">$297</p>
+                        </div>
+                        <a href="#" class="button buttonWhite">BOOK NOW!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tourCard">
+                <div class="cardSide cardFront">
+                    <div class="cardPicture cardPicture-2">
+                        
+                    </div>
+                    <h4 class="cardHeading">
+                        <span class="cardSpan cardSpan-2">The forest hiker</span>
+                    </h4>
+                    <div class="cardDetails">
+                        <ul>
+                            <li>7 day tours</li>
+                            <li>Up to 40 people</li>
+                            <li>6 tour guides</li>
+                            <li>Sleep in provided tents</li>
+                            <li>Difficulty:medium</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cardSide cardBack cardBack-2">
+                    <div class="backCenter">
+                        <div class="cardPrice">
+                            <p class="priceOnly">only</p>
+                            <p class="priceValue">$497</p>
+                        </div>
+                        <a href="#" class="button buttonWhite">BOOK NOW!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tourCard">
+                <div class="cardSide cardFront">
+                    <div class="cardPicture cardPicture-3">
+                    </div>
+                    <h4 class="cardHeading">
+                        <span class="cardSpan cardSpan-3">The snow adventurer</span>
+                    </h4>
+                    <div class="cardDetails">
+                        <ul>
+                            <li>5 day tours</li>
+                            <li>Up to 15 people</li>
+                            <li>3 tour guides</li>
+                            <li>Sleep in provided tents</li>
+                            <li>Difficulty:hard</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cardSide cardBack cardBack-3">
+                    <div class="backCenter">
+                        <div class="cardPrice">
+                            <p class="priceOnly">only</p>
+                            <p class="priceValue">$897</p>
+                        </div>
+                        <a href="#" class="button buttonWhite">BOOK NOW!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center"><a href="#" class="button buttonGreen">discover all tours</a></div>
+    </section>
+    <section class="stories">
+        <div class="backgroundVideo">
+            <video class="backgroundVideoContent" autoplay muted loop>
+                <source src="img/video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <h2 class="secondaryHeading">we make people genuinely happy</h2>
+        <div class="storyContainer">
+            <div class="story">
+                <figure class="storyCircle">
+                    <img src="img/nat-8.jpg" class="storyImage">
+                    <figcaption class="storyCaption">Mary Smith</figcaption>
+                </figure>
+                <div class="storyText">
+                    <h3>i had the best week ever with my family</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores pariatur voluptatibus veritatis cumque laudantium quas in soluta facilis iure asperiores! Ut quo voluptatibus adipisci ipsum natus ipsa odio voluptate accusamus quisquam cumque alias magnam perferendis tenetur, libero deserunt ex.</p>
+                </div>
+            </div>
+            <div class="story">
+                <figure class="storyCircle">
+                    <img src="img\nat-9.jpg" class="storyImage">
+                    <figcaption class="storyCaption">Jack Wilson</figcaption>
+                </figure>
+                <div class="storyText">
+                    <h3>Wow! my life is completely different now</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores pariatur voluptatibus veritatis cumque laudantium quas in soluta facilis iure asperiores! Ut quo voluptatibus adipisci ipsum natus ipsa odio voluptate accusamus quisquam cumque alias magnam perferendis tenetur, libero deserunt ex.</p>
+                </div>
+            </div>
+        </div>
+        <div class="center"><a href="#" class="buttonText">Read all stories →</a></div>
+    </section>
+    <section class="booking">
+        <div class="bookingContainer">
+            <div class="bookingText">
+                <h2 class="secondaryHeading">Start booking now</h2>
+                <form>
+                    <div class="formGroup">
+                        <input type="text" class="inputField" placeholder="Full name" id="name" required>
+                        <label for="name" class="formLabel">Full name</label>
+                    </div>
+                    <div class="formGroup">
+                        <input type="email" class="inputField" placeholder="Email address" id="email" required>
+                        <label for="email" class="formLabel">Email address</label>
+                    </div>
+                    <div class="formMarginBot formGroup">
+                        <div>
+                            <input type="radio" class="bookingCheckbox" id="smallGroup" name="size">
+                            <label for="smallGroup" class=" formRadioLabel"><span class="formRadioButton"></span>Small tour group</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="bookingCheckbox" id="bigGroup" name="size">
+                            <label for="bigGroup" class="formRadioLabel"><span class="formRadioButton"></span>Large tour group</label>
+                        </div>
+                    </div>
+                    <div class="formGroup">
+                        <button class="button buttonGreen">Next step →</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footerLogo">
+            <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" src="img/logo-green-2x.png">
+        </div>
+        <div class="footerText">
+            <div class="footerNavigation">
+                <ul class="footerList">
+                    <li class="footerItem"><a href="#" class="footerLink">Company</a></li>
+                    <li class="footerItem"><a href="#" class="footerLink">Contact us</a></li>
+                    <li class="footerItem"><a href="#" class="footerLink">Carrers</a></li>
+                    <li class="footerItem"><a href="#" class="footerLink">Privacy policy</a></li>
+                    <li class="footerItem"><a href="#" class="footerLink">Terms</a></li>
+                </ul>
+            </div>
+            <div class="footerCopyright">
+                <p class="copyrightText">
+                Submitted by <a href="#" class="footerLink">Netanel Cohen</a>
+                for his <a href="#" class="footerLink">Iitc fullstack course</a>
+                Built by <a href="#" class="footerLink">Jonas Schmedtmann</a> for his online course <a href="#" class="footerLink">Advanced CSS and Sass</a>.
+                Copyright © by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal
+                and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas
+                Schmedtmann, is of course highly appreciated!
+            </p></div>
+            
+        </div>
+    </footer>
+    <script src="navbar.js"></script>
+</body>
+</html>

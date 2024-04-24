@@ -1,0 +1,803 @@
+@import url(reset.css);
+@font-face {
+    font-family: "linea-basic-10";
+    src: url('fonts/linea-basic-10.ttf') format('truetype');
+}
+
+*::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    padding: 3rem;
+}
+.navigationButton{
+    background-color: #ffffff;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
+    cursor: pointer;
+    text-align: center;
+}
+.navigationText{
+    color: black;
+    font-size: 30px;
+    display: inline-block;
+    margin-top: 1.1rem;
+}
+.navigationCheckbox{
+    display: none;
+}
+.navbar{
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    width: 0;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.navigationList{
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 100%;
+}
+.navigationList li{
+    margin: 1rem;
+}
+.navigationList li a{
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+    background-size: 220%;
+    transition: all 0.4s ;
+}
+.navigationList li a:hover{
+    background-position: 100%;
+    color: #55c57a;
+    transform: translateX(1rem);
+    cursor: pointer;
+
+
+}
+.navigationList li span{
+    margin-right: 1.5rem;
+    display: inline-block;
+}
+.navigationBackground{
+    height: 6rem;
+    width: 6rem;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    border-radius: 50%;
+    z-index: 1000;
+    background-image: radial-gradient(#7ed56f, #28b485);
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.navigationCheckbox:checked ~ .navigationBackground{
+    transform: scale(80);
+}
+.navigationCheckbox:checked ~ .navbar{
+    opacity: 1;
+    width: 100%;
+}
+.hamburger-icon {
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+  }
+  
+  .close-icon {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease;
+  }
+
+.header{
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(img/hero-small.jpg);
+    background-size: cover;
+    background-position:top ;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+}
+/* @supports (clip-path: polygon(0 0)){
+    .header{
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+} */
+.headerLogoBox{
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+.headerLogo{
+    height: 3.5rem;
+}
+.headerTextBox{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+h1{
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+}
+.headingPrimaryText{
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out;
+}
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80%{
+        transform: translateX(1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+.headingSecondaryText{
+    font-size: 2rem;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+}
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80%{
+        transform: translateX(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+.button{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+.button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.button:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.buttonWhite{
+    background-color: white;
+}
+.button::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+    transition: all 0.4s;
+}
+.buttonWhite::after{
+    background-color: white;
+}
+.buttonGreen{
+    background-color: #55c57a;
+    color: white;
+}
+.buttonGreen::after{
+    background-color: #55c57a;
+}
+.buttonAnimated{
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+}
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+.sectionAbout{
+    background-color: #f7f7f7;
+    padding: 25rem 0;
+    margin-top: -20vh;
+}
+.sectionAbout .secondaryHeading{
+    width: 100%;
+    margin-bottom: 8rem;
+    text-align: center;
+}
+.flexWrapper{
+    display: flex;
+    max-width: 114rem;
+    margin-inline: auto;
+    justify-content: center;
+    gap: 100px;
+}
+.secondaryHeading{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2rem;
+    transition: all 0.2s;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    background-clip: text;
+    color: transparent;
+}
+.secondaryHeading:hover{
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.aboutHeader3{
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.aboutPar{
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+.aboutText{
+    width: calc((100% - 6rem) / 2);
+}
+.buttonText{
+    font-size: 1.6rem;
+    color: #55c57a;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid #55c57a;
+    padding: 3px;
+    transition: all 0.2s;
+}
+.buttonText:hover{
+    background-color: #55c57a;
+    color: white;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+.aboutImages{
+    width: calc((100% - 6rem) / 2);
+    position: relative;
+}
+.compositionPhoto{
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem;
+}
+.compositionPhoto-p1{
+    left: 0;
+    top: -2rem;
+}
+.compositionPhoto-p2{
+    right: 0;
+    top: 2rem;
+}
+.compositionPhoto-p3{
+    top: 10rem;
+    left: 20%;
+}
+.compositionPhoto:hover{
+    outline: 1.5rem solid #55c57a;
+    transform: scale(1.05) translateY(-0.5rem);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+.aboutImages:hover .compositionPhoto:not(:hover){
+    transform: scale(0.95);
+}
+.features{
+    padding-block: 20rem;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(img/nat-4.jpg);
+    transform: skewY(-7deg);
+    background-size: cover;
+    margin-top: -10rem;
+}
+.features>*{
+    transform: skewY(7deg);
+}
+.cards{
+    max-width: 114rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+}
+.featureCard{
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    transition: transform .3s;
+    width: calc((100% - 3 * 6rem) / 4);
+}
+.featureCard:not(:last-child){
+    margin-right: 6rem;
+}
+.featureCard:hover{
+    transform:translateY(-1.5rem) scale(1.05);
+   
+}
+.featureCard h3{
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.featureCardIcon{
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    height: 90px;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    background-clip: text;
+    color: transparent;
+    font-family: "linea-basic-10";
+    line-height: 1;
+    font-style: normal;
+}
+.icon-world::before{
+    content: "\e028";
+}
+.icon-compass::before{
+    content: "B";
+}
+.icon-map::before{
+    content: "+";
+}
+.icon-heart::before{
+    content: "W";
+}
+.popularTours{
+    background-color: #f7f7f7;
+    padding: 25rem 0 15rem 0;
+    margin-top: -10rem;
+}
+.popularTours .secondaryHeading{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8rem;
+}
+.tourCardContainer{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-inline: auto;
+    align-items: center;
+    margin-inline: auto;
+    max-width: 114rem;
+    margin-bottom: 8rem;
+}
+.tourCard{
+    position: relative;
+    height: 52rem;
+    width: calc((100% - 2* 6rem) / 3);
+}
+.cardPicture{
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.cardPicture-1{
+    background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(img/nat-5.jpg);
+}
+.cardPicture-2{
+    background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(img/nat-6.jpg);
+}
+.cardPicture-3{
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+}
+.cardSide{
+    height: 52rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+.cardHeading{
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+}
+.cardSpan{
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+.cardSpan-1{
+    background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.cardSpan-2{
+    background-image: linear-gradient(to right bottom, #7ed56f, #28b485)
+}
+.cardSpan-3{
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa)
+}
+.cardDetails{
+    padding: 3rem;
+}
+.cardDetails ul{
+    list-style: none;
+    width: 80%;
+    margin-inline: auto;
+    padding-inline-start: 0px;
+}
+
+.cardDetails ul li{
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.cardDetails ul li:not(:last-child){
+    border-bottom: 1px solid #eee;
+}
+/* hide the back at the beginning */
+.cardBack{
+    transform: rotateY(180deg);
+}
+/* when hovering hide the front and rotate the back again */
+.tourCard:hover .cardFront{
+    transform: rotateY(-180deg);
+}
+.tourCard:hover .cardBack{
+    transform: rotateY(0);
+}
+.backCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+}
+.cardBack-1{
+    background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.cardBack-2{
+    background-image: linear-gradient(to right bottom, #7ed56f, #28b485)
+}
+.cardBack-3{
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa)
+}
+.cardPrice{
+    text-align: center;
+    color: white;
+    margin-bottom: 8rem;
+}
+.priceOnly{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+.priceValue{
+    font-size:6rem ;
+    font-weight:100 ;
+}
+.center{
+    text-align: center;
+    margin-top: 10rem;
+}
+.stories{
+    position: relative;
+    padding-block: 15rem;
+}
+.stories h2{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8rem;
+}
+.backgroundVideo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.15;
+    overflow: hidden;
+}
+.backgroundVideoContent{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.storyContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 114rem;
+    margin-inline: auto;
+    gap: 50px;
+}
+.story{
+    display: flex;
+    width: 75%;
+    margin-inline: auto;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: 1.6rem;
+    transform: skewX(-12deg);
+}
+.storyText{
+    transform: skewX(12deg);
+}
+.storyText h3{
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.storyCircle{
+    clip-path: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    width: 55rem;
+    height: 15rem;
+    transform: skewX(12deg) translateX(-3rem);
+
+}
+.storyImage{
+    height: 100%;
+    transform: scale(1.5);
+    backface-visibility: hidden;
+    transition: all 0.5s;
+}
+.storyCaption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    color: white;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+}
+.story:hover .storyCaption{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+.story:hover .storyImage{
+    transform: scale(1);
+    filter: blur(3px) brightness(80%);
+}
+.booking{
+    width: 100%;
+    padding-block:15rem ;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    
+}
+.bookingContainer{
+    width: 114rem;
+    margin-inline: auto;
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255,255,255,0.9)50%, transparent 50%), url(img/nat-10.jpg);
+    background-size: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+.bookingText{
+    width: 50%;
+    padding: 6rem;
+}
+.bookingText .secondaryHeading{
+    margin-bottom: 4rem;
+}
+.inputField{
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
+}
+.inputField:focus{
+    outline: none;
+    border-bottom: 3px solid #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+.inputField:focus:invalid{
+    border-bottom: 3px solid #ff7730;
+}
+.formGroup:not(:last-child){
+    margin-bottom: 2rem;
+}
+
+.formLabel{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+}
+.inputField:placeholder-shown+.formLabel{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+}
+.formMarginBot{
+    margin-bottom: 4rem !important;
+}
+.formMarginBot div{
+    width: 49%;
+    display: inline-block;
+}
+.bookingCheckbox{
+    display: none;
+}
+.formRadioLabel{
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+}
+.formRadioButton{
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #55c57a;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+}
+.formRadioButton::after{
+    content: "";
+    display: block;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    background-color: #55c57a;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity:0;
+    transform: opacity 0.2s;
+}
+.bookingCheckbox:checked ~ .formRadioLabel .formRadioButton::after{
+    opacity: 1;
+}
+.footer{
+    background-color: #333;
+    padding-block: 10rem;
+    font-size: 1.4rem;
+    color: #f7f7f7;
+}
+.footerText{
+    max-width: 114rem;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    gap: 14rem;
+}
+.footerLogo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8rem;
+}
+.footerList{
+    padding-left: 0px;
+}
+.footerItem{
+    list-style: none;
+    display: inline-block;
+}
+.footerNavigation{
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    display: inline-block;
+    max-width: calc((100% - 6rem) / 2);
+}
+.footerItem:not(:last-child){
+    margin-right: 1.5rem;
+}
+.footerLink{
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+    background-color: #333;
+    display: inline-block;
+    transition: all 0.2s;
+}
+.footerLink:hover{
+    color: #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: rotate(5deg) scale(1.3);
+}
+.footerCopyright{
+    width: calc((100% - 6rem) / 2);
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    
+}
+.cophrightText{
+    width: 80%;
+}
