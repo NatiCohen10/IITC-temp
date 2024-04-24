@@ -45,9 +45,9 @@
                 <a href="#" class="buttonText">Learn more →</a>
             </div>
             <div class="aboutImages">
-                <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 1" class="compositionPhoto compositionPhoto-p1" src="img/nat-1-large.jpg">
-                <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 2" class="compositionPhoto compositionPhoto-p2" src="img/nat-2-large.jpg">
-                <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 3" class="compositionPhoto compositionPhoto-p3" src="img/nat-3-large.jpg">
+                <img class="compositionPhoto compositionPhoto-p1" src="img/nat-1-large.jpg">
+                <img class="compositionPhoto compositionPhoto-p2" src="img/nat-2-large.jpg">
+                <img class="compositionPhoto compositionPhoto-p3" src="img/nat-3-large.jpg">
             </div>
         </div>
     </section>
@@ -76,13 +76,12 @@
         </div>
     </section>
 
-    <section class="popularTours">
+    <section class="popularTours" id="popularTours">
         <h2 class="secondaryHeading">most popular tours</h2>
         <div class="tourCardContainer">
             <div class="tourCard">
                 <div class="cardSide cardFront">
                     <div class="cardPicture cardPicture-1">
-                       
                     </div>
                     <h4 class="cardHeading">
                         <span class="cardSpan cardSpan-1">The sea explorer</span>
@@ -103,7 +102,7 @@
                             <p class="priceOnly">only</p>
                             <p class="priceValue">$297</p>
                         </div>
-                        <a href="#" class="button buttonWhite">BOOK NOW!</a>
+                        <a href="#popup" class="button buttonWhite">BOOK NOW!</a>
                     </div>
                 </div>
             </div>
@@ -132,7 +131,7 @@
                             <p class="priceOnly">only</p>
                             <p class="priceValue">$497</p>
                         </div>
-                        <a href="#" class="button buttonWhite">BOOK NOW!</a>
+                        <a href="#popup" class="button buttonWhite">BOOK NOW!</a>
                     </div>
                 </div>
             </div>
@@ -159,13 +158,14 @@
                             <p class="priceOnly">only</p>
                             <p class="priceValue">$897</p>
                         </div>
-                        <a href="#" class="button buttonWhite">BOOK NOW!</a>
+                        <a href="#popup" class="button buttonWhite">Book now!</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="center"><a href="#" class="button buttonGreen">discover all tours</a></div>
     </section>
+
     <section class="stories">
         <div class="backgroundVideo">
             <video class="backgroundVideoContent" autoplay muted loop>
@@ -197,6 +197,7 @@
         </div>
         <div class="center"><a href="#" class="buttonText">Read all stories →</a></div>
     </section>
+    
     <section class="booking">
         <div class="bookingContainer">
             <div class="bookingText">
@@ -253,6 +254,21 @@
             
         </div>
     </footer>
+    <div class="popup" id="popup">
+        <div class="popupContent">
+            <div class="popupImages">
+                <img src="img/nat-8.jpg" class="popupImage">
+                <img src="img/nat-9.jpg" class="popupImage">
+            </div>
+            <div class="popupText">
+                <a href="#popularTours" class="popupClose">x</a>
+                <h2 class="secondaryHeading">start booking now</h2>
+                <h3 class="popupHeader">important-please read these terms before booking</h3>
+                <p class="popupParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae soluta, fugit quos facere quibusdam repellendus incidunt magni officiis rem aperiam eligendi minima maiores eius quis! Molestiae minus quidem autem dignissimos praesentium, id cupiditate in animi natus! Laudantium maxime perspiciatis sit temporibus dicta fugit facilis autem inventore, earum dolorem sint blanditiis, quam libero adipisci corporis molestiae. Voluptates, doloribus magnam saepe necessitatibus corporis mollitia animi accusamus, veniam id adipisci repellat quia! Dolore repellat recusandae amet iste omnis esse assumenda deserunt doloribus distinctio repudiandae sequi fugiat odio et sapiente nemo, aliquid magnam quae laudantium voluptatem inventore asperiores illo a suscipit mollitia? Laudantium, doloribus.</p>
+                <a href="#popularTours" class="button buttonGreen">book now</a>
+            </div>
+                </div>
+        </div>
     <script src="navbar.js"></script>
 </body>
 </html>
