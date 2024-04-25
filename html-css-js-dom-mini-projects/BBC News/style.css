@@ -1,0 +1,250 @@
+@import url(reseat.css);
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    /* margin-inline: auto; */
+    margin-left: 170px;
+}
+.navbarItem{
+    font-weight: bold;
+    font-size: 90%;
+    padding: 13px 15px 0 15px;
+    border-left: 1px #cccccc solid;
+    height: 27px;
+}
+.logo{
+    margin-top: 8px;
+    width: 100px;
+    margin-right: 8px;
+}
+.signinImage{
+    width: 25px;
+    margin: 11px 15px;
+}
+.signIn{
+    border-left: 1px #cccccc solid;
+}
+.signIn span{
+    font-weight: bold;
+    font-size: 90%;
+    padding-right:50px ;
+    position: relative;
+    top: -16px;
+}
+.wigglyLine{
+    height: 40px;
+}
+.bell{
+    height:25px;
+    margin: 9px 8px 0 8px;
+    position: relative;
+    top: -5px;
+}
+.moreArrow{
+    width: 16px;
+    margin-left: 20px;
+}
+.searchWrapper{
+    width: 1000px;
+    display: flex;
+    justify-content: flex-start;
+    height: 45px;
+    margin-left: 280px;
+    border-left: 1px #cccccc solid;
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+.searchInput{
+    background-color: #e4e4e4;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 6px;
+    margin: 5px 0 0 5px;
+}
+.searchIcon{
+    height: 27px;
+    position: relative;
+    top: 9px;
+    right: 5px;
+}
+.header{
+    width: 1000px;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+.headerWrapper{
+    background-color: #BB1919;
+    padding-inline: 280px;
+    
+}
+h1{
+    position: relative;
+    top: -15px;
+    color: white;
+    font-size: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.localNews{
+    border: 1px #BB4545 solid;
+    width: 250px;
+    padding: 4px 5px 0 10px;
+    margin: 5px 10px 0 0;
+}
+.findLocalNews{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    position: relative;
+    top: -8px;
+}
+.localNews img{
+    height: 40px;
+}
+.secondaryNavWrapper{
+    width: 100%;
+    background-color: #A91717;
+}
+.secondaryNav{
+    width: 1000px;
+    height: 40px;
+    margin-inline: auto;
+    color: white;
+}
+.secondaryNav a:not(:last-child) {
+    border-right: 1px solid #BB4545;
+}
+
+.secondaryNav a{
+    padding: 0 10px;
+    font-size: 14px;
+    position: relative;
+    top: 10px;
+}
+.noBorder{
+    border: none !important;
+}
+.downArrow{
+    height: 10px;
+    position: relative;
+    top: 10px;
+}
+.pageHeader{
+    width: 100px;
+    margin-left: 270px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-bottom: 2px solid #A91717;
+    width: 105px;
+}
+.contentFlex{
+    display: flex;
+}
+.contentText{
+    width: 250px;
+    color: #5a5a5a;
+    
+}
+.mainImage{
+    width: 400px;
+    margin-left: 20px;
+}
+.pageText{
+    margin-left: 270px;
+    width: 670px;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+    height: 350px;
+    
+}
+.pageText h2 a{
+    color: black;
+    font-size: 30px;
+}
+.pageText h2 a:hover{
+    color: #1167A8;
+    cursor: pointer;
+}
+.clock{
+    height: 15px;
+    position: relative;
+    top: 2px;
+}
+.topicLink{
+    color: #A91717;
+    border-left: 1px solid #cccccc;
+    padding-left: 10px;
+}
+.topicLink:hover{
+    color: #1167A8;
+    cursor: pointer;
+}
+.articleHr{
+    border-top: 1px solid #A91717;
+    width: 50px;
+}
+.articleLink{
+    color: black;
+}
+.pageContent{
+    display: flex;
+}
+h4{
+    font-weight: normal;
+    font-size: 20px;
+}
+.pageVideos{
+    margin-left: 20px;
+}
+.sideImage{
+    width: 90px;
+    margin-right: 10px;
+    height: 52px;
+}
+.clock{
+    display: inline-block;
+}
+.sideArticle{
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.sideArticle div{
+    width: 180px;
+    position: relative;
+
+    /* top: -18px; */
+}
+.sideText{
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    margin-block-start: 1rem;
+    margin-block-end: 0.3rem;
+    position: relative;
+    top: -18px;
+}
+.sideText:hover{
+    color: #1167A8;
+    cursor: pointer;
+
+}
+.information{
+    position: relative;
+    top: -20px;
+}
+.information span:not(:first-child){
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+}
