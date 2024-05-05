@@ -231,6 +231,7 @@ function addGameHistory() {
     };
     gamesHistory.push(gameHistory);
 }
+
 // on button click it creates the history table
 function showHistory() {
     const tableOfHistory = document.querySelector('#historyTable');

@@ -109,6 +109,9 @@ h1{
     position: relative;
     top: -8px;
 }
+.findLocalNews:hover{
+    border-bottom: 2px solid white;
+}
 .localNews img{
     height: 40px;
 }

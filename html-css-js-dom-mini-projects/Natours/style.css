@@ -219,11 +219,7 @@ h1{
     transform: translateY(-3px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-/* when hovering a button the after element grows 1.4 in the x axis and 1.6 in the y axis and dissappears */
-.button:hover::after{
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
+
 .buttonWhite{
     background-color: white;
     color: inherit;
@@ -242,6 +238,12 @@ h1{
     z-index: -5;
     transition: all 0.4s;
 }
+/* when hovering a button the after element grows 1.4 in the x axis and 1.6 in the y axis and dissappears */
+.button:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
 /* if the button is white the after element's background color is white like the button */
 .buttonWhite::after{
     background-color: white;

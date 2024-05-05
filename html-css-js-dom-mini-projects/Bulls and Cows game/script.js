@@ -25,6 +25,10 @@ function initializeComputerArr(){
 console.log(`computer array is ${computerGeneratedArr}`);
 }
 
+/**
+ * 
+ * @param {*} value 
+ */
 function getNumbersFromUser(value){
     // button is a var thats equal to the button thats currently pressed
     let button = document.querySelector(`#button${value + 1}`)
