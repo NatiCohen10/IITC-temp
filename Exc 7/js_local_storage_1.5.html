@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="incrementByOne()">+1</button>
+    <p id="sumShow1"></p>
+    <p id="sumShow2"></p>
+    <button onclick="incrementByOne2()">+1 but different count</button>
+    <button onclick="clearstorage()">clear</button>
+    <script>
+        let sumShow1 = document.getElementById('sumShow1')
+        let sumShow2 = document.getElementById('sumShow2')
+        let key1 = 'increment1'
+        let key2 = 'increment2'
+        let sum1 = localStorage.getItem(key1) !== null? Number(localStorage.getItem(key1)) : 0;;
+        let sum2 = localStorage.getItem(key2) !== null? Number(localStorage.getItem(key2)) : 0;
+        
+
+        function incrementByOne(){
+            sum1++
+            sumShow1.innerText = sum1
+            localStorage.setItem(key1, sum1)
+            
+        }
+
+        function incrementByOne2(){
+           
+                
+                sum2++
+                sumShow2.innerText = sum2
+                localStorage.setItem(key2, sum2)
+            
+            
+            
+            
+        }
+        
+        function clearstorage(){
+            localStorage.clear()
+            sum1 = 0
+            sum2 = 0
+            sumShow1.innerText = ''
+            sumShow2.innerText = ''
+        }
+    </script>
+</body>
+</html>

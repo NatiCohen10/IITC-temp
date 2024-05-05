@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [1,5,2,3,7,8]
+        function sortArray(array){
+            let sortedArray = [...array] 
+            let swapped = true
+                while(swapped){
+                    swapped = false
+                    for(let i =0; i<sortedArray.length-1;i++){
+                        if(sortedArray[i] > sortedArray[i+1]){
+                            let temp = sortedArray[i]
+                            sortedArray[i] = sortedArray[i+1]
+                            sortedArray[i+1] = temp
+                            swapped = true
+                        }
+                    }
+                }
+                return sortedArray
+
+            }
+            
+        
+        console.log(sortArray(array))
+        console.log(array);
+        // time complexity of O(n^2)
+    </script>
+</body>
+</html>

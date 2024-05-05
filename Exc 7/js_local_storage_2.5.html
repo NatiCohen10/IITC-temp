@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green{
+            color: green
+        }
+        .checked{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>todo list</h1>
+        <input type="text" placeholder="Your event's name" id="todoName" required>
+        <button class="todoButton" onclick="addEvent()">Add Todo</button>
+        <p>list todos</p>
+        <button class="showList" onclick="showList()">Show list</button>
+        <button onclick="clearAll()">Clear all local storage</button>
+        <button onclick="sortTodo()">Sort list</button>
+        <button onclick="markCompleted()" id="markButton">Mark task complete</button>
+        <div id="list"></div>
+    </div>
+    <script>
+        
+    let listSpace = document.getElementById('list')
+    let eventName = document.getElementById('todoName')
+    let parsedArr;
+    let key = 'todo'
+    let isMarkedComplete = false
+    // if todoArr exists its the parsed list from the local storage. else its []
+    let todoArr = JSON.parse(localStorage.getItem(key)) || [];
+    let markButton = document.getElementById('markButton')
+
+    function addEvent(){
+        eventType = eventName.value
+        if(localStorage.getItem(key) !== null) {
+            parsedArr = JSON.parse(localStorage.getItem(key));
+            if(parsedArr.includes(eventType)) {
+                alert(`Event with the name ${eventType} already exists`);}
+
+            else{
+            todoArr.push(eventType)
+            parsedArr.push(eventType)
+            console.log(todoArr.sort());
+            let stringifiedDetails = JSON.stringify(parsedArr)
+            localStorage.setItem(key, stringifiedDetails)
+            eventName.value = ''
+        }}
+        else{
+            todoArr.push(eventType)
+            localStorage.setItem(key, JSON.stringify(todoArr))
+            eventName.value = ''
+        }
+    }
+
+    function showList() {
+    let todoList = JSON.parse(localStorage.getItem(key));
+
+    if (!todoList || todoList.length === 0) {
+        listSpace.innerText = 'No events yet!';
+        return;
+    }
+
+    let addEventToPage = '<ul>';
+    for (let event of todoList) {
+        addEventToPage += `<li onclick="deleteItem(this); colorItem(this);" id = "${event}">${event}</li>`;
+    }
+    addEventToPage += '</ul>';
+
+    listSpace.innerHTML = addEventToPage;
+}
+
+
+
+    function deleteItem(event){
+        if(!isMarkedComplete){
+            const toDelete = event.innerText;
+            const index = todoArr.indexOf(toDelete)
+            if(index !== -1){
+            todoArr.splice(index, 1);
+            localStorage.setItem(key, JSON.stringify(todoArr))
+            showList()
+        }
+        }
+        
+        
+    }   
+
+    function markCompleted(){
+        if(isMarkedComplete){
+            isMarkedComplete = false
+            markButton.classList.remove('checked')
+            return
+            
+        }
+        isMarkedComplete = true
+        markButton.classList.add('checked')
+        
+    }
+
+    function colorItem(event) {
+    if(isMarkedComplete){
+        const toColor = event.innerText;
+        if(event.classList.contains('green')){
+            event.classList.remove('green')
+    }
+        else{
+            event.classList.add('green');
+    }
+    
+    }
+    
+}
+
+
+
+    function sortTodo(){
+        let todoList = JSON.parse(localStorage.getItem(key))
+        todoList.sort()
+        let addEventToPage = '<ul>';
+        for (let event of todoList) {
+        addEventToPage += `<li onclick="deleteItem(this); colorItem(this);">Todo: ${event}</li>`;
+        }
+        addEventToPage += '</ul>';
+
+        listSpace.innerHTML = addEventToPage;
+        }
+
+
+    function clearAll(){
+        todoArr = []
+        localStorage.clear()
+        listSpace.innerText = 'Storage cleared'
+    }
+    
+    </script>
+</body>
+</html>
