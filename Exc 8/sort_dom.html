@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        li{
+            padding-bottom: 10px;
+            font-size:x-large;
+        }
+        li:nth-child(odd) {
+            color: blue;
+        }
+
+        li:nth-child(even) {
+            color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <ol id="sortingArray"></ol>
+    <script>
+        let sortingDiv = document.getElementById('sortingArray')
+      const array = [5,3,4,2,6,1];
+
+      function computeMin(numbers, indexToStart) {
+        let index = indexToStart;
+        let minNum = numbers[indexToStart];
+        for (let i = indexToStart; i < numbers.length; i++) {
+          if (minNum > numbers[i]) {
+            minNum = numbers[i];
+            index = i;
+          }
+        }
+
+        return index;
+      }
+
+      function switchNums(numbers, i, j) {
+        let temp = numbers[j];
+        numbers[j] = numbers[i];
+        numbers[i] = temp;
+      }
+
+      function sortArr(numbers) {
+        let sortedNumbers = [...numbers];
+        for (let i = 0; i < sortedNumbers.length; i++) {
+            let listSteps = `<li>${sortedNumbers}</li>`
+            sortingDiv.innerHTML += listSteps
+          let minIndex = computeMin(sortedNumbers, i);
+          switchNums(sortedNumbers, i, minIndex);
+        }
+        return sortedNumbers;
+      }
+      sortArr(array)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const array = [7, -2, 5, 3, 1]
+        function findNumInArr(array, number){
+            return array.find(num => num === number) !== undefined ? 'yes' : 'no'
+        }
+        console.log(findNumInArr(array, 1))
+        console.log(findNumInArr(array, 99))
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       const personArr =  [
+        { name: "Moshe Kupernikos", age: 33 },
+        { name: "Shimon", age: 21 },
+        { name: "Joe", age: 34 },
+    ]
+    function ageInObject(array, age){
+        const element = array.find((person) => person.age === age)
+        console.log(element);
+        return  element? element.age : 'no'
+    }
+    console.log(ageInObject(personArr, 33));
+    console.log(ageInObject(personArr, 20));
+    </script>
+</body>
+</html>
