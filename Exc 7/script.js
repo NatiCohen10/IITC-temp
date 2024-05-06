@@ -2,7 +2,7 @@ let correctAnswers = ['d', 'b', 'd', 'b', 'd', 'b', 'c', 'b', 'b', 'c'];
 let key = 'quiz'
 let userAnswer =
 localStorage.getItem(key)!==null?JSON.parse(localStorage.getItem(key)) : []
-
+colorAnswersBlueOnInit()
 
 console.log(userAnswer);
 
@@ -19,12 +19,13 @@ function checkAnswer(questionNumber, answer){
     document.getElementById(`q${questionNumber}${answer}`).style.color = 'blue'
     
 }
-colorAnswersBlueOnInit()
 function colorAnswersBlueOnInit(){
     if(userAnswer.length !== 0){
-        for(let answer = 0; answer <userAnswer.length;answer++){
-            let questionNumber = answer + 1
-            document.getElementById(`q${questionNumber}${userAnswer[answer]}`).style.color = 'blue'
+        for(let answer = 0; answer < userAnswer.length; answer++){
+            if(userAnswer[answer] !== null) {
+                let questionNumber = answer + 1;
+                document.getElementById(`q${questionNumber}${userAnswer[answer]}`).style.color = 'blue';
+            }
         }
     }
 }
@@ -37,12 +38,12 @@ function colorAnswersBlack(questionNumber){
 function disableOnclick(){
     for(let questionNumber = 1; questionNumber <= correctAnswers.length; questionNumber++){
         let options = document.getElementById(`q${questionNumber}`).querySelectorAll('li');
-        options.forEach(option => option.onclick = null);
+        options.forEach(option => option.onclick = '');
     }
 
 }
 function submitAnswers(){
-    if(userAnswer.length === correctAnswers.length){
+    if(userAnswer.length === correctAnswers.length && !userAnswer.includes('null')){
         disableOnclick()
         for(let answer = 0; answer<(userAnswer.length);answer++){
             let questionNumber = answer+1
@@ -67,5 +68,16 @@ function clearStorage(){
         let options = document.getElementById(`q${questionNumber}`).querySelectorAll('li');
         options.forEach(option => option.style.color = '');
     }
+    enableOnclick()
     console.log(userAnswer);
+}
+
+function enableOnclick(){
+    for(let questionNumber = 1; questionNumber <= correctAnswers.length; questionNumber++){
+        let options = document.getElementById(`q${questionNumber}`).querySelectorAll('li');
+        options.forEach(option => option.onclick = function(){
+            let answer = option.dataset.option;
+            checkAnswer(questionNumber, answer);
+        });
+    }
 }
