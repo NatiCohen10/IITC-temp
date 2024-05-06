@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quiz">
+        <ol>
+            <li id="q1">What country has the highest life expectancy?
+                <ol type="a">
+                    <li onclick="checkAnswer('1', 'a')" id="q1a">Japan</li>
+                    <li onclick="checkAnswer('1', 'b')" id="q1b">Switzerland</li>
+                    <li onclick="checkAnswer('1', 'c')" id="q1c">Australia</li>
+                    <li onclick="checkAnswer('1', 'd')" id="q1d">Hong Kong</li>
+                </ol>
+            </li>
+            <li id="q2">Where would you be if you were standing on the Spanish Steps?
+                <ol type="a">
+                    <li onclick="checkAnswer('2', 'a')" id="q2a">Paris</li>
+                    <li onclick="checkAnswer('2', 'b')" id="q2b">Rome</li>
+                    <li onclick="checkAnswer('2', 'c')" id="q2c">Madrid</li>
+                    <li onclick="checkAnswer('2', 'd')" id="q2d">Barcelona</li>
+                </ol>
+            </li>
+            <li id="q3">Which language has the most native speakers?
+                <ol type="a">
+                    <li onclick="checkAnswer('3', 'a')" id="q3a">English</li>
+                    <li onclick="checkAnswer('3', 'b')" id="q3b">Mandarin</li>
+                    <li onclick="checkAnswer('3', 'c')" id="q3c">Hebrew</li>
+                    <li onclick="checkAnswer('3', 'd')" id="q3d">Spanish</li>
+                </ol>
+            </li>
+            <li id="q4">What is the most common surname in the United States?
+                <ol type="a">
+                    <li onclick="checkAnswer('4', 'a')" id="q4a">Johnson</li>
+                    <li onclick="checkAnswer('4', 'b')" id="q4b">Smith</li>
+                    <li onclick="checkAnswer('4', 'c')" id="q4c">Williams</li>
+                    <li onclick="checkAnswer('4', 'd')" id="q4d">Brown</li>
+                </ol>
+            </li>
+            <li id="q5">What disease commonly spread on pirate ships?
+                <ol type="a">
+                    <li onclick="checkAnswer('5', 'a')" id="q5a">Plague</li>
+                    <li onclick="checkAnswer('5', 'b')" id="q5b">Smallpox</li>
+                    <li onclick="checkAnswer('5', 'c')" id="q5c">Malaria</li>
+                    <li onclick="checkAnswer('5', 'd')" id="q5d">Scurvy</li>
+                </ol>
+            </li>
+            <li id="q6">Who was the Ancient Greek God of the Sun?
+                <ol type="a">
+                    <li onclick="checkAnswer('6', 'a')" id="q6a">Athena</li>
+                    <li onclick="checkAnswer('6', 'b')" id="q6b">Apollo</li>
+                    <li onclick="checkAnswer('6', 'c')" id="q6c">Zeus</li>
+                    <li onclick="checkAnswer('6', 'd')" id="q6d">Hermes</li>
+                </ol>
+            </li>
+            <li id="q7">What was the name of the crime boss who was head of the feared Chicago Outfit?
+                <ol type="a">
+                    <li onclick="checkAnswer('7', 'a')" id="q7a">John Gotti</li>
+                    <li onclick="checkAnswer('7', 'b')" id="q7b">Lucky Luciano</li>
+                    <li onclick="checkAnswer('7', 'c')" id="q7c">Al Capone</li>
+                    <li onclick="checkAnswer('7', 'd')" id="q7d">Tony Soprano</li>
+                </ol>
+            </li>
+            <li id="q8">What year was the United Nations established?
+                <ol type="a">
+                    <li onclick="checkAnswer('8', 'a')" id="q8a">1935</li>
+                    <li onclick="checkAnswer('8', 'b')" id="q8b">1945</li>
+                    <li onclick="checkAnswer('8', 'c')" id="q8c">1955</li>
+                    <li onclick="checkAnswer('8', 'd')" id="q8d">1965</li>
+                </ol>
+            </li>
+            <li id="q9">Who has won the most total Academy Awards?
+                <ol type="a">
+                    <li onclick="checkAnswer('9', 'a')" id="q9a">Meryl Streep</li>
+                    <li onclick="checkAnswer('9', 'b')" id="q9b">Walt Disney</li>
+                    <li onclick="checkAnswer('9', 'c')" id="q9c">Steven Spielberg</li>
+                    <li onclick="checkAnswer('9', 'd')" id="q9d">Tom Hanks</li>
+                </ol>
+            </li>
+            <li id="q10">What artist has the most streams on Spotify?
+                <ol type="a">
+                    <li onclick="checkAnswer('10', 'a')" id="q10a">Ed Sheeran</li>
+                    <li onclick="checkAnswer('10', 'b')" id="q10b">Ariana Grande</li>
+                    <li onclick="checkAnswer('10', 'c')" id="q10c">Drake</li>
+                    <li onclick="checkAnswer('10', 'd')" id="q10d">Taylor Swift</li>
+                </ol>
+            </li>
+        </ol>
+        <button class="submit" onclick="submitAnswers()">Submit</button>
+        <button class="clear" onclick="clearStorage()">Restart Quiz</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
