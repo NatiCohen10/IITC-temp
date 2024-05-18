@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="sortingArray"></ol>
+    <script>
+        let sortingDiv = document.getElementById('sortingArray');
+        const array = [59, 3, 42, 21.5, 62, 10];
+        let steps = [];
+
+        function computeMin(numbers, indexToStart) {
+            let index = indexToStart;
+            let minNum = numbers[indexToStart];
+            for (let i = indexToStart; i < numbers.length; i++) {
+                if (minNum > numbers[i]) {
+                    minNum = numbers[i];
+                    index = i;
+                }
+            }
+            return index;
+        }
+
+        function switchNums(numbers, i, j) {
+            let temp = numbers[j];
+            numbers[j] = numbers[i];
+            numbers[i] = temp;
+        }
+
+        function sortArr(numbers) {
+            let sortedNumbers = [...numbers];
+            for (let i = 0; i < sortedNumbers.length; i++) {
+                let minIndex = computeMin(sortedNumbers, i);
+                switchNums(sortedNumbers, i, minIndex);
+                steps.push([...sortedNumbers]); // Capture the current state of the array
+            }
+            return sortedNumbers;
+        }
+
+        function displaySteps() {
+            if (steps.length > 0) {
+                let step = steps.shift(); // Get the next step
+                let listItem = document.createElement('li');
+                listItem.textContent = step.join(', ');
+                sortingDiv.appendChild(listItem);
+            } else {
+                clearInterval(intervalDisplay); // Stop when no more steps are left
+            }
+        }
+
+        sortArr(array);
+        let intervalDisplay = setInterval(displaySteps, 1000);
+    </script>
+</body>
+</html>

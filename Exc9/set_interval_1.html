@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="timer">0</p>
+    <button id="startCount" onclick="startCounter()">Start Counting</button>
+    <button id="stopCount" onclick="stopCounter()">Stop Counting</button>
+    <script>
+        let count = 0
+        let timer = document.getElementById('timer')
+        let timerInterval;
+        
+        function startCounter(){
+            timerInterval = setInterval(function(){
+            count++
+            timer.innerText = count
+        }, 1000)
+        }
+        function stopCounter(){
+            clearInterval(timerInterval)
+        }
+    </script>
+</body>
+</html>
