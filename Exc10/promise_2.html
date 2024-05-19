@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fetchData(){
+        const myPromise = new Promise((resolve) => {
+            resolve('Data fetched')})
+             return myPromise}
+
+        function logMessage(message){
+            setTimeout(function(){
+                console.log(message);
+            }, 2000)
+        }
+
+        let promise = fetchData()
+        promise.then(logMessage)
+    </script>
+</body>
+</html>

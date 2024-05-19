@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #progressBar{
+            border: 1px solid black;
+            width: 500px;
+            height: 30px;
+            border-radius: 20px;
+            display: none;
+        }
+        .progressFill{
+            background-image: linear-gradient(to right, red, blue, yellow);
+            animation: fillBar 1.8s ease;
+            display: block;
+            height: 100%;
+            border-radius: 20px;
+        }
+        @keyframes fillBar {
+            0%{
+                width: 0;
+            }
+            100%{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="progressBar"><span id="filler"></span></div>
+    <button id="toggleProgressBar">Toggle bar</button>
+    <script>
+        let progressBar = document.getElementById('progressBar')
+        let toggleButton = document.getElementById('toggleProgressBar')
+        let barFiller = document.getElementById('filler')
+        let myPromise = new Promise((resolve) => {
+            resolve(toggleBar)
+        })
+
+        function toggleBar(){
+            barFiller.classList.add('progressFill')
+            progressBar.style.display = 'block'
+            setTimeout(function(){
+                barFiller.classList.remove('progressFill')
+                progressBar.style.display = 'none'
+            }, 2000)
+        }
+
+        toggleButton.addEventListener('click', function(){
+            toggleBar()
+        })
+    </script>
+</body>
+</html>

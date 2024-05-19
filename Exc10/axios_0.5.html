@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body, html{
+            height: 100vh;
+            position: relative;
+        }
+      #loadSpinner {
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        border: 16px solid rgb(255, 248, 248);
+        border-top: 16px solid blue;
+        animation: rotate 1s ease-in-out infinite;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loadSpinner"></div>
+    <div id="numCount"></div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+      const url = "https://jsonplaceholder.typicode.com/comments";
+      let numCount = document.getElementById("numCount");
+      let spinner = document.getElementById("loadSpinner");
+      let table = document.createElement("table");
+
+      let tableHead = document.createElement("tr");
+
+      table.appendChild(tableHead);
+      axios.get(url).then(function (element) {
+        setTimeout(function () {
+          spinner.style.display = "none";
+          createTable();
+          numCount.innerText = element.data.length;
+          for (data of element.data) {
+            let tableRow = document.createElement("tr");
+            tableRow.innerHTML = `<td>${data.body}</td><td>${data.email}</td><td>${data.id}</td><td>${data.name}</td><td>${data.postId}</td>`;
+            table.appendChild(tableRow);
+          }
+        }, 5000);
+      });
+
+      function createTable() {
+        table.classList.add("informationTable");
+        document.body.appendChild(table);
+        tableHead.innerHTML = `<th>body</th><th>email</th><th>id</th><th>name</th><th>postId</th>`;
+      }
+    </script>
+  </body>
+</html>

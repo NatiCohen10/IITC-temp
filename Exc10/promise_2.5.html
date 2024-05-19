@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isEvenAsync(value){
+            let myPromise = new Promise((resolve, reject) => {
+                if(Number.isInteger(value)){
+                    resolve(value%2==0)
+                }
+                else{
+                    reject('invalid value')
+                }
+            })
+            return myPromise
+        }
+
+        function resolveHandler(bool){
+            console.log(bool);
+        }
+        function rejectHandler(str){
+            console.error(str);
+        }
+
+        let promise = isEvenAsync(2)
+        promise.then(resolveHandler).catch(rejectHandler)
+    </script>
+</body>
+</html>

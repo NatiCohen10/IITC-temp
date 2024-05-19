@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="numCount"></div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+      const url = "https://jsonplaceholder.typicode.com/comments";
+      let numCount = document.getElementById('numCount')
+        let table = document.createElement('table')
+        table.classList.add = 'informationTable'
+        document.body.appendChild(table)
+        let tableHead = document.createElement('tr')
+        tableHead.innerHTML =  `<th>body</th><th>email</th><th>id</th><th>name</th><th>postId</th>`
+        
+        table.appendChild(tableHead)
+        axios.get(url)
+        .then(function(element){
+            console.log(element.data);
+            numCount.innerText = element.data.length
+            for(data of element.data){
+                let tableRow = document.createElement('tr')
+                tableRow.innerHTML = `<td>${data.body}</td><td>${data.email}</td><td>${data.id}</td><td>${data.name}</td><td>${data.postId}</td>`;
+                table.appendChild(tableRow)
+            }
+            
+        })
+    </script>
+</body>
+</html>

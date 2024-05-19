@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="successMessage"></div>
+    <div id="failMessage"></div>
+    <button id="successButton">Success</button>
+    <button id="failButton">Fail</button>
+    <script>
+        let successDiv = document.getElementById('successMessage')
+        let failDiv = document.getElementById('failMessage')
+        let successButton = document.getElementById('successButton')
+        let failButton = document.getElementById('failButton')
+
+        const myPromise = new Promise((myResolve, myReject) => {
+            myResolve(resolveHandler)
+            myReject(rejectHandler)
+        })
+
+        function resolveHandler(){
+            setTimeout(function(){
+                successDiv.innerText = 'Success'
+            }, 2000)
+            
+        }
+        function rejectHandler(){
+            setTimeout(function(){
+                failDiv.innerText = 'Fail'
+            }, 3000)
+            
+        }
+        successButton.addEventListener('click', function(){
+            resolveHandler()
+        })
+
+        failButton.addEventListener('click', function(){
+            rejectHandler()
+        })
+
+    </script>
+</body>
+</html>
