@@ -37,9 +37,9 @@
         let toggleButton = document.getElementById('toggleProgressBar')
         let barFiller = document.getElementById('filler')
         let myPromise = new Promise((resolve) => {
-            resolve(toggleBar)
+            resolve()
         })
-
+        
         function toggleBar(){
             barFiller.classList.add('progressFill')
             progressBar.style.display = 'block'
@@ -50,6 +50,7 @@
         }
 
         toggleButton.addEventListener('click', function(){
+            myPromise.then(toggleBar)
             toggleBar()
         })
     </script>
