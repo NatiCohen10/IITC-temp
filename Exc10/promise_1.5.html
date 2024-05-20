@@ -34,6 +34,9 @@
         })
         
         function toggleBar(){
+            const duration = 2000
+            const steps = 100
+            const intervalTime = duration / steps
             let width = 0
             progressBar.style.display = 'block'
             width = 1
@@ -45,10 +48,10 @@
                     barFiller.style.width = width + '%'
                     width++
                 }
-            }, 20)
+            },  intervalTime)
             setTimeout(function(){
                 progressBar.style.display = 'none'
-            }, 2000)
+            }, duration)
         }
 
         toggleButton.addEventListener('click', function(){
