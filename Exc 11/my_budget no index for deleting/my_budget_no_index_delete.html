@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>My_Budget</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div id="snackbar">Invalid Input!</div>
+      <button class="darkModeToggler" onclick="toggleDarkMode()"></button>
+      <h2 id="headWithDate"></h2>
+      <h1 id="totalBudget">- 0.00</h1>
+      <div id="totalIncomeDiv" class="headerBudgetDiv">
+        <span class="incomeText">income</span>
+        <div>
+          <span id="totalIncome">+ 0.00</span>
+          <p id="invisiblePercent">10%</p>
+        </div>
+      </div>
+      <div id="totalExpensesDiv" class="headerBudgetDiv">
+        <span class="expensesText">expenses</span>
+        <div class="expensesValues">
+          <div>
+            <span id="totalExpenses">- 0.00</span>
+            <p id="totalPercent">---</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="transactionInput">
+      <!-- droplist +/- -->
+      <select name="action" id="action" onchange="handleSelectChange()">
+        <option value="income">+</option>
+        <option value="expense">-</option>
+      </select>
+      <div class="inputWrapper">
+        <input
+          type="text"
+          id="actionDescription"
+          class="inputField"
+          placeholder="Add description"
+        />
+        <input
+          type="number"
+          placeholder="value"
+          id="actionValue"
+          class="inputField"
+        />
+      </div>
+      <div class="checkmarkSwitch">
+        
+      </div>
+    </div>
+    <div id="breakdown">
+      <div id="incomes" class="transactionWrapper">
+        <h3>income</h3>
+        <div class="incomeItems"></div>
+      </div>
+
+      <div id="expenses" class="transactionWrapper">
+        <h3>expenses</h3>
+        <div class="expenseItems"></div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

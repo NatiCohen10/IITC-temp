@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div id="infoDiv"></div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+      const infoDiv = document.getElementById('infoDiv')
+      const postsUrl = "https://jsonplaceholder.typicode.com/posts";
+      const userUrl = "https://jsonplaceholder.typicode.com/users";
+      const commentsUrl = "https://jsonplaceholder.typicode.com/comments"
+      let postsCounter = 0
+      let usersCounter = 0
+      let commentsCounter = 0
+
+      let postsNum = axios.get(postsUrl)
+      let userNum = axios.get(userUrl)
+      let commentNum = axios.get(commentsUrl)
+
+      postsNum.then(
+        posts => {
+            for(let post of posts.data){
+                postsCounter++
+            }
+            infoDiv.innerHTML += `${postsCounter}<br>`
+            return userNum
+        }
+      ).then(users => {
+        for(let user of users.data){
+            usersCounter++
+        }
+        infoDiv.innerHTML += `${usersCounter}<br>`
+        return commentNum
+      }).then(comments => {
+        for(let comment of comments.data){
+            commentsCounter++
+        }
+        infoDiv.innerHTML += `${commentsCounter}<br>`
+      })
+    </script>
+  </body>
+</html>

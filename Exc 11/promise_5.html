@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const object = {id:1,name:'John Doe'}
+        const array = ['post1', 'post2']
+
+        function fetchUsers(){
+        let promise1 = new Promise((resolve, reject) => {
+            setTimeout(resolve(object), 2000)
+        })
+        return promise1}
+        function fetchPosts(){
+        let promise2 = new Promise((resolve, reject) => {
+            setTimeout(resolve(array), 1000)
+        })
+        return promise2}
+        
+        Promise.all(
+            [fetchUsers(), fetchPosts()]
+        ).then(results => {console.log(results);})
+    </script>
+</body>
+</html>

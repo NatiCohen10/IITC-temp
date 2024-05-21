@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      td,
+      th,
+      tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 4px;
+      }
+      #loader {
+        width: 140px;
+        height: 140px;
+        border: 16px solid black;
+        border-top: 16px solid purple;
+        border-radius: 50%;
+        animation: load 1.5s ease-in-out infinite;
+      }
+      @keyframes load {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 4px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        top: 30px;
+      }
+      #snackbar.show {
+        visibility: visible;
+        animation: fadein 0.5s, fadeout 0.5s 2s;
+      }
+      @keyframes fadein {
+        from {
+          top: 0;
+          opacity: 0;
+        }
+        to {
+          top: 30px;
+          opacity: 1;
+        }
+      }
+      @keyframes fadeout {
+        from {
+          top: 30px;
+          opacity: 1;
+        }
+        to {
+          top: 0;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="snackbar">Invalid Input!</div>
+    <div id="loader"></div>
+    <table id="postTable"></table>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+      const postTable = document.getElementById("postTable");
+      const loader = document.getElementById("loader");
+      const url = "https://jsonplaceholder.typicode.com/posts";
+      const userUrl = "https://jsonplaceholder.typicode.com/users";
+      let th = document.createElement("tr");
+      let userArray = [];
+      function createTable() {
+        th.innerHTML = `<th>User name</th><th>id</th><th>title</th><th>body</th>`;
+        postTable.appendChild(th);
+      }
+
+      function showSnackbar() {
+        let snackbarMessage = document.getElementById("snackbar");
+        snackbarMessage.classList.remove("show");
+        void snackbarMessage.offsetWidth;
+        snackbarMessage.classList.add("show");
+        if (snackbarTimeout) {
+          clearTimeout(snackbarTimeout);
+        }
+        snackbarTimeout = setTimeout(function () {
+          snackbarMessage.classList.remove("show");
+        }, 2400);
+      }
+
+      function getUserData() {
+        loader.style.display = "none";
+        createTable();
+        axios
+          .get(userUrl)
+          .then(function (userData) {
+            userArray = [...userData.data];
+            console.log(userArray);
+            console.log(userArray[0].username);
+            axios
+              .get(url)
+              .then((posts) => {
+                for (post of posts.data) {
+                  let tr = document.createElement("tr");
+                  tr.innerHTML = `<td>${
+                    userArray[post.userId - 1].username
+                  }</td><td>${post.id}</td><td>${post.title}</td><td>${
+                    post.body
+                  }</td>`;
+                  postTable.appendChild(tr);
+                }
+              })
+              .catch(showSnackbar);
+          })
+          .catch(showSnackbar);
+      }
+
+      setTimeout(getUserData, 3000);
+    </script>
+  </body>
+</html>

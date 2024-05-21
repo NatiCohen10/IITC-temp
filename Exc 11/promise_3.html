@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const object = { id: 1, name: "John Doe" }
+        let myPromise = new Promise(resolve => {
+            resolve(object);
+        });
+
+        myPromise
+            .then(obj => {
+                console.log(obj.id);
+                return obj;
+            })
+            .then(obj => {
+                console.log(obj.name);
+            });
+    </script>
+</body>
+</html>
