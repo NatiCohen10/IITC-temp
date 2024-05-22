@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div id="infoDiv"></div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+      const infoDiv = document.getElementById('infoDiv')
+      const postsUrl = "https://jsonplaceholder.typicode.com/posts";
+      const userUrl = "https://jsonplaceholder.typicode.com/users";
+      const commentsUrl = "https://jsonplaceholder.typicode.com/comments"
+      let postsCounter = 0
+      let usersCounter = 0
+      let commentsCounter = 0
+      let totalCount = 0;
+      let postsNum = axios.get(postsUrl)
+      let userNum = axios.get(userUrl)
+      let commentNum = axios.get(commentsUrl)
+        
+    
+      async function getPostNum(){
+        posts = await postsNum
+        postsCounter += posts.data.length
+        infoDiv.innerHTML += `${postsCounter}<br>`
+      }
+
+      async function getUserNum(){
+        users = await userNum
+        usersCounter += users.data.length
+        infoDiv.innerHTML += `${usersCounter}<br>`
+      }
+      async function getCommentsNum(){
+        comments = await commentNum
+        commentsCounter = comments.data.length
+        infoDiv.innerHTML += `${commentsCounter}<br>`
+      }
+      async function getDetails(){
+        await getPostNum()
+        await getCommentsNum()
+        await getUserNum()
+        await getTotalCounts()
+      }
+      getDetails()
+
+      async function getTotalCounts(){
+        posts = await postsNum
+        users = await userNum
+        comments = await commentNum
+        totalCount += posts.data.length + users.data.length + comments.data.length
+        infoDiv.innerHTML += `${totalCount}<br>`
+      }
+      
+      
+    </script>
+  </body>
+</html>

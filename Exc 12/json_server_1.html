@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="post">Post</button>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('post').addEventListener('click', postToJson);
+
+        async function postToJson() {
+            for (let i = 0; i < 500; i++) {
+                const book = {
+                    id: i,
+                    name: `bookName${i}`,
+                    author: `author${i}`,
+                    numPages: Math.floor(Math.random() * 500)
+                };
+                const user = {
+                    id: i,
+                    firstName: `firstName${i}`,
+                    lastName: `lastName${i}`
+                };
+
+                try {
+                    await axios.post('http://localhost:8001/books', book);
+                    console.log(`Book ${i} posted successfully`);
+
+                    await axios.post('http://localhost:8001/users', user);
+                    console.log(`User ${i} posted successfully`);
+                } catch (error) {
+                    console.error(`Error posting book or user ${i}:`, error);
+                }
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>

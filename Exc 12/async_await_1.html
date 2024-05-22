@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pause(ms){
+            return new Promise(resolve => {
+                setTimeout((() => resolve('hi')), ms)
+            })
+        }
+
+        async function activatePromise(){
+            console.log(new Date);
+            let promise = await pause(5000)
+            console.log(promise);
+            console.log(new Date);
+        }
+        activatePromise()
+    </script>
+</body>
+</html>

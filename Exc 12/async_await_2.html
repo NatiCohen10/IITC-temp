@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pause(ms){
+            return new Promise(resolve => {
+                setTimeout((() => resolve()), ms)
+            })
+        }
+
+        async function callPromise(){
+            let f1 = await pause(3000)
+            console.log('f1 is called');
+            let f2 = await pause(5000)
+            console.log('f2 is called');
+            let f3 = await pause(7000)
+            console.log('f3 is called');
+        }
+           callPromise()
+
+    </script>
+</body>
+</html>
