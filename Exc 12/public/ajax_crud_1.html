@@ -78,6 +78,10 @@
         })
 
         async function showUsers(){
+          if(showUser.style.display == 'block'){
+              showUser.style.display = 'none'
+              return
+            }
             await axios.get(url).then(users => {
                 console.log(users.data);
                 for(let user of users.data){
@@ -85,8 +89,11 @@
                     let tr = `<tr><td>${user.id}</td><td>${user.firstName}</td><td>${user.lastName}</td></tr>`
                     showUser.innerHTML += tr
                 }
+                showUser.style.display = 'block'
+            
             })
-            showUser.style.display = 'block'
+            
+            
         }
     </script>
   </body>

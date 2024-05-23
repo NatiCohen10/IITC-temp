@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>CRUD Page for users</h1>
+      <nav>
+        <ul>
+          <li><a href="ajax_crud_1.html">Users</a></li>
+          <li><a href="ajax_crud_2.html">Books</a></li>
+        </ul>
+      </nav>
+    </header>
+    <form id="createUser">
+      <label for="firstName">first name:</label>
+      <input type="text" name="firstName" id="firstName" placeholder="Jane" required />
+      <label for="lastName">Last name:</label>
+      <input type="text" name="lastName" id="lastName" placeholder="Doe" required />
+      <button type="submit">Create</button>
+    </form>
+    <form id="updateUser">
+        <label for="updateId">Id of the user you want to update:</label>
+        <input type="text" name="updateId" id="updateId" placeholder="id" required>
+        <label for="firstName">First name:</label>
+        <input type="text" name="firstName" id="updateFirstName" placeholder="Jane" required>
+        <label for="lastName">Last name:</label>
+        <input type="text" name="lastName" id="updateLastName" placeholder="Doe" required>
+        <button type="submit">Update</button>
+    </form>
+    <form id="deleteUser">
+      <label for="">ID:</label>
+      <input
+        type="text"
+        name="userId"
+        id="userId"
+        placeholder="user id"
+        required
+      />
+      <button type="submit">Delete</button>
+    </form>
+    <div class="pagination">
+      <button onclick="showUsers()">Show Current Users</button>
+      <button id="nextPage">Next</button>
+      <button id="previousPage">Previous</button>
+    </div>
+    <table id="showUsers">
+        <tr><th>id</th><th>first name</th><th>last name</th></tr>
+        
+    </table>
+    
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        let createUser = document.getElementById('createUser')
+        let updateUser = document.getElementById('updateUser')
+        let deleteUser = document.getElementById('deleteUser')
+        const url = `http://localhost:8001/users`
+        let page = 1;
+        let showUser = document.getElementById('showUsers')
+        showUser.style.display = 'none'
+        async function createUsers(){
+            const formData = new FormData(createUser)
+            await axios.post(url, formData, {headers: {"Content-Type" : 'application/json'},})
+        }
+        createUser.addEventListener('submit', function(event){
+            event.preventDefault()
+            createUsers()
+        })
+
+        async function deleteUsers(){
+            let userID = document.getElementById('userId').value
+            await axios.delete(url + '/' + userID)
+        }
+        deleteUser.addEventListener('submit', function(event){
+            event.preventDefault()
+            deleteUsers()
+        })
+        async function updateUsers(){
+            let updateId = document.getElementById('updateId').value
+            let updateFirstName = document.getElementById('updateFirstName').value
+            let updateLastName = document.getElementById('updateLastName').value
+            let updateUrl = url + '/' + updateId
+            let updateDetails = {firstName : updateFirstName, lastName : updateLastName}
+            await axios.patch(updateUrl, updateDetails)
+        }
+        updateUser.addEventListener('submit', function(event){
+            event.preventDefault()
+            updateUsers()
+        })
+
+        async function showUsers(){
+          let urlUsers = `${url}?_page=${page}&_per_page=25`;
+            await axios.get(urlUsers).then(users => {
+                showUser.innerHTML = `<tr><th>id</th><th>first name</th><th>last name</th></tr>`
+                for(let user of users.data.data){
+                    
+                    let tr = `<tr><td>${user.id}</td><td>${user.firstName}</td><td>${user.lastName}</td></tr>`
+                    showUser.innerHTML += tr
+                }
+                showUser.style.display = 'block'
+            
+            })
+            
+            
+        }
+
+        let nextPageButton = document.getElementById("nextPage");
+      nextPageButton.addEventListener("click", async function () {
+        
+        let urlUsers = `${url}?_page=${page}&_per_page=25`;
+        await axios.get(urlUsers).then(users => {
+            if(page < users.data.pages){
+                page++;
+                showUsers();
+            }
+        })
+        
+      });
+
+      let previousPageButton = document.getElementById('previousPage');
+      previousPageButton.addEventListener('click', function(){
+        if(page > 1) {
+          page--;
+          showUsers();
+        }
+      });
+    </script>
+  </body>
+</html>

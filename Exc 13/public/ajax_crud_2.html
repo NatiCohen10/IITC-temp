@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+        <h1>CRUD Page for books</h1>
+        <nav>
+          <ul>
+            <li><a href="ajax_crud_1.html">Users</a></li>
+            <li><a href="ajax_crud_2.html">Books</a></li>
+          </ul>
+        </nav>
+      </header>
+    <form id="createBook">
+      <label for="name">book name:</label>
+      <input type="text" name="name" id="firstName" placeholder="book1" required />
+      <label for="author">Book author:</label>
+      <input type="text" name="author" id="lastName" placeholder="Jane Doe" required />
+      <label for="numPages">number of pages:</label>
+      <input type="number" name="numPages" id="numPages" placeholder="000" required>
+      <button type="submit">Create</button>
+    </form>
+    <form id="updateBook">
+        <label for="updateId">Id of the book you want to update:</label>
+        <input type="text" name="updateId" id="updateId" placeholder="id" required>
+        <label for="firstName">book name:</label>
+        <input type="text" name="name" id="updateBookName" placeholder="book1" required>
+        <label for="author">author:</label>
+        <input type="text" name="author" id="updateAuthor" placeholder="JRRM" required>
+        <label for=""></label>
+        <input type="number" name="numPages" id="updatePages" placeholder="000" required>
+        <button type="submit">Update</button>
+    </form>
+    <form id="deleteBook">
+      <label for="">ID:</label>
+      <input
+        type="text"
+        name="id"
+        id="bookId"
+        placeholder="book id"
+        required
+      />
+      <button type="submit">Delete</button>
+    </form>
+    <div class="pagination">
+        <button onclick="showBooks()">Show Current Books</button>
+        <button id="nextPage" >Next</button>
+        <button id="previousPage" >Previous</button>
+        
+    </div>
+    <table id="showBooks">
+        <tr><th>id</th><th>book name</th><th>author name</th><th>number of pages</th></tr>
+        
+    </table>
+    
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        let page = 1;
+        let createBook = document.getElementById('createBook')
+        let updateBook = document.getElementById('updateBook')
+        let deleteBook = document.getElementById('deleteBook')
+        const url = `http://localhost:8001/books`
+        let showBook = document.getElementById('showBooks')
+        showBook.style.display = 'none'
+        async function createBooks(){
+            const formData = new FormData(createBook)
+            await axios.post(url, formData, {headers: {"Content-Type" : 'application/json'},})
+        }
+
+        createBook.addEventListener('submit', function(event){
+            event.preventDefault()
+            createBooks()
+        })
+
+        async function deleteBooks(){
+            let BookID = document.getElementById('bookId').value
+            await axios.delete(url + '/' + bookID)
+        }
+
+        deleteBook.addEventListener('submit', function(event){
+            event.preventDefault()
+            deleteBooks()
+        })
+
+        async function updateBooks(){
+            let updateId = document.getElementById('updateId').value
+            let updateBookName = document.getElementById('updateBookName').value
+            let updateAuthorName = document.getElementById('updateAuthor').value
+            let updatePages = document.getElementById('updatePages').value
+            let updateUrl = url + '/' + updateId
+            let updateDetails = {name : updateBookName, author : updateAuthorName,numPages : updatePages }
+            await axios.patch(updateUrl, updateDetails)
+        }
+
+        updateBook.addEventListener('submit', function(event){
+            event.preventDefault()
+            updateBooks()
+        })
+
+        async function showBooks(){
+          
+            let urlBooks = `${url}?_page=${page}&_per_page=25`;
+            console.log(urlBooks);
+            await axios.get(urlBooks).then(books => {
+                showBook.innerHTML = `<tr><th>id</th><th>book name</th><th>author name</th><th>number of pages</th></tr>`
+                for(let book of books.data.data){
+                    
+                    let tr = `<tr><td>${book.id}</td><td>${book.name}</td><td>${book.author}</td><td>${book.numPages}</tr>`
+                    showBook.innerHTML += tr
+                }
+                showBook.style.display = 'block'
+            
+            })
+            
+            
+        }
+        let nextPageButton = document.getElementById("nextPage");
+      nextPageButton.addEventListener("click", async function () {
+        
+        let urlBooks = `${url}?_page=${page}&_per_page=25`;
+        await axios.get(urlBooks).then(books => {
+            if(page < books.data.pages){
+                page++;
+                showBooks();
+                console.log('next');
+            }
+        })
+        
+      });
+
+      let previousPageButton = document.getElementById('previousPage');
+      previousPageButton.addEventListener('click', function(){
+        if(page > 1) {
+          page--;
+          showBooks();
+        }
+      });
+    </script>
+  </body>
+</html>
+
+</body>
+</html>
