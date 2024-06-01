@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(age, height, name){
+                this.name = name
+                this.age = age
+                this.height = height
+            }
+            write = () => {
+                console.log(`name: ${this.name}, age:${this.age}, height: ${this.height}`);
+            }
+        }
+
+        class Employee extends Person{
+            jobDescription = 'worker'; jobPosition = 'manager'
+            write = () => {console.log(`name: ${this.name}, age:${this.age}, height: ${this.height}, job description : ${this.jobDescription}, job position : ${this.jobPosition}`);}
+        }
+
+        const manager = new Employee(25, 189, 'ori')
+        manager.write()
+    </script>
+</body>
+</html>
