@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const inventory = [
+        { id: 1, name: "Laptop", price: 1000 },
+        { id: 2, name: "Phone", price: 500 },
+        { id: 3, name: "Tablet", price: 800 },
+      ];
+
+      function arrayToObject(arr, id) {
+        const newObj = arr.reduce((object, item) => {
+          object[id] = item;
+          id++;
+          return object;
+        }, {});
+        return newObj;
+      }
+      let obj = arrayToObject(inventory, 1);
+      console.log(obj);
+    </script>
+  </body>
+</html>

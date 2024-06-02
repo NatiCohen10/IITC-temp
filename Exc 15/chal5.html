@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const duplicates = [1, 2, 2, 3, 4, 4, 5];
+      function uniqueValues(array) {
+        const newArr = array.reduce((newArr, number) => {
+          if (!newArr.includes(number)) {
+            newArr.push(number);
+          }
+          return newArr;
+        }, []);
+        return newArr;
+      }
+      console.log(uniqueValues(duplicates));
+    </script>
+  </body>
+</html>

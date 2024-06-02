@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const array1 = [1, 2, 3, 4, 5];
+      const array2 = [3, 4, 5, 6, 7];
+
+      function intersectArrays(array1, array2) {
+        let i = 0;
+        const newArr = array1.filter((number) => {
+          return array2.includes(number);
+        });
+        return newArr;
+      }
+      console.log(intersectArrays(array1, array2));
+    </script>
+  </body>
+</html>

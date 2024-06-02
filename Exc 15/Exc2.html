@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [1, 2, 3, 4, 5];
+      numbers.forEach((number, index) => {
+        console.log(number, index);
+      });
+      const doubledArr = numbers.map((number) => number ** 2);
+      const evenArr = numbers.filter((number) => {
+        return number % 2 === 0;
+      });
+      const sumNums = numbers.reduce((sum, number) => {
+        sum += number;
+        return sum;
+      }, 0);
+      console.log(sumNums);
+      console.log(doubledArr);
+      console.log(evenArr);
+    </script>
+  </body>
+</html>

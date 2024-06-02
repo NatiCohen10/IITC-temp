@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const students = ["Omer", "Jane", "Biden", "Jill"];
+      const foundName = students.find((name) => {
+        return name[0] === "J";
+      });
+      students.some((name) => {
+        return name[0] === "J";
+      });
+      students.every((name) => {
+        return name[0] === "J";
+      });
+    </script>
+  </body>
+</html>
