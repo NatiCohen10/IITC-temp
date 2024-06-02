@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const employees = [
+        { name: "John Doe", department: "Engineering", yearsOfExp: 5 },
+        { name: "Jane Smith", department: "Marketing", yearsOfExp: 8 },
+        { name: "Peter Johnson", department: "Engineering", yearsOfExp: 5 },
+        { name: "Lucy Brown", department: "Marketing", yearsOfExp: 10 },
+        { name: "Mike Davis", department: "Engineering", yearsOfExp: 3 },
+        { name: "Sara Wilson", department: "Marketing", yearsOfExp: 8 },
+      ];
+
+      function groupBy(empArr, groupingKey) {
+        const newArr = empArr.reduce((groupedObj, employee) => {
+          let currentKey = employee[groupingKey];
+          if (!groupedObj[currentKey]) {
+            groupedObj[currentKey] = [];
+          }
+          groupedObj[currentKey].push(employee);
+          return groupedObj;
+        }, {});
+        return newArr;
+      }
+      console.log(groupBy(employees, "department"));
+      console.log(groupBy(employees, "yearsOfExp"));
+    </script>
+  </body>
+</html>
